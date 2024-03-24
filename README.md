@@ -25,13 +25,12 @@ El repositorio utiliza ROS2 Humble como versi처n de control. Para la comunicaci�
 
 ## Instalaci처n del repositorio
 
-## Comandos de instalaci처n unificados
-Si ya se tiene bien instalado y configurado el software de la secci처n anterior, se puede copiar y pegar el siguiente bloque de c처digo en la terminal. 
+Si ya se tiene bien instalado y configurado el software de la secci처n anterior, se puede copiar y pegar el siguiente bloque de c처digo en la terminal. El proceso de instalaci처n paso a paso se encuentra descrito en la wiki.   
 
 ````bash
 source /opt/ros/humble/setup.bash
 git clone -b main https://github.com/Miguel-LA/TFM_MiguelLerinAlonso.git
-cd ./TFM_MiguelLerinAlonso/workspace/ros_ur_driver/src/
+cd ./TFM_MiguelLerinAlonso/workspace/ros_ur_driver/
 vcs import src --skip-existing --input src/Universal_Robots_ROS2_Driver/Universal_Robots_ROS2_Driver-not-released.${ROS_DISTRO}.repos
 rosdep update
 rosdep install --ignore-src --from-paths src -y
