@@ -13,7 +13,14 @@ El repositorio se divide en las siguientes secciones, representadas cada una por
 
     1.1. **ros_ur_driver:** Este directorio guarda el espacio de trabajo propio del robot UR10 utilizado en este TFM.
 
-2. **TFM_MiguelLerinAlonso.wiki:** Esta carpeta alberga los ficheros de documentación del proyecto. Se guardan los mismos archivos que en la wiki pero se ponen en copia local por si en algún momento se debe dejar el acceso al repo como privado.
+2. **TFM_MiguelLerinAlonso.wikigit:** Esta carpeta alberga los ficheros de documentación del proyecto. Se guardan los mismos archivos que en la wiki pero se ponen en copia local por si en algún momento se debe dejar el acceso al repo como privado.
 
 # Descarga e instalación del repositorio
+## Software previo
+El repositorio utiliza ROS2 Humble como versión de control. Para la comunicación con el robot, el cálculo de trayectorias y la visualización de movimientos se utiliza el software Moveit2. El nombre de la lista contine un enlace a la documentación oficial. Para aquel software disponible para otras versiones de ROS2 se incluya la versión correspondiente a su rama *main* de su respectivo repositorio. También se indica una referencia al artículo propio de instalación de la wiki.
 
+- [ROS2 Humble](https://docs.ros.org/en/humble/index.html): Es la versión de ROS2 utilizada en este trabajo. En este proyecto se ha optado por la instalación en el [sistema operativo Ubuntu 22 con gestor de paquetes de Debian](https://docs.ros.org/en/humble/Installation/Ubuntu-Install-Debians.html). Para otro tipo de instalación se recomienda consultar la documentación oficial. Más desarrollo en el artículo de la wiki.
+- [Moveit2](https://moveit.picknik.ai/main/index.html): Es un software de código abierto utilizado para simular el robot y calcular las trayectorias efectuadas por el mismo. Más desarrollo en el artículo de la wiki.
+- [ROS2 UR Driver](https://github.com/UniversalRobots/Universal_Robots_ROS2_Driver): Controlador de Universal Robots para actuar como una interfaz entre el entorno de ROS2 de nuestro equipo y el robot UR al que nos deseemos conectar.
+
+## Instalación del repositorio

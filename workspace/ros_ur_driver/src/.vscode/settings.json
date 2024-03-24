@@ -1,0 +1,42 @@
+{
+    "python.autoComplete.extraPaths": [
+        "/home/alvaro/Desktop/workspace/ros_ur_driver/install/data_logger/lib/python3.10/site-packages",
+        "/home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_robot_driver/local/lib/python3.10/dist-packages",
+        "/home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_moveit_config/local/lib/python3.10/dist-packages",
+        "/home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_dashboard_msgs/local/lib/python3.10/dist-packages",
+        "/home/alvaro/Desktop/workspace/install/ur_robot_driver/local/lib/python3.10/dist-packages",
+        "/home/alvaro/Desktop/workspace/install/ur_moveit_config/local/lib/python3.10/dist-packages",
+        "/home/alvaro/Desktop/workspace/install/ur_dashboard_msgs/local/lib/python3.10/dist-packages",
+        "/home/alvaro/Desktop/workspace/install/data_logger/lib/python3.10/site-packages",
+        "/home/alvaro/ros2_ws_copia/install/my_robot_controller/lib/python3.10/site-packages",
+        "/home/alvaro/ros2_ws_copia/install/movimiento_articular/lib/python3.10/site-packages",
+        "/home/alvaro/ros2_ws_copia/install/data_logger/lib/python3.10/site-packages",
+        "/home/alvaro/workspace/ros_ur_driver/install/ur_robot_driver/local/lib/python3.10/dist-packages",
+        "/home/alvaro/workspace/ros_ur_driver/install/ur_moveit_config/local/lib/python3.10/dist-packages",
+        "/home/alvaro/workspace/ros_ur_driver/install/ur_dashboard_msgs/local/lib/python3.10/dist-packages",
+        "/home/alvaro/ros2_ws/build/my_robot_controller",
+        "/home/alvaro/ros2_ws/install/my_robot_controller/lib/python3.10/site-packages",
+        "/opt/ros/humble/lib/python3.10/site-packages",
+        "/opt/ros/humble/local/lib/python3.10/dist-packages"
+    ],
+    "python.analysis.extraPaths": [
+        "/home/alvaro/Desktop/workspace/ros_ur_driver/install/data_logger/lib/python3.10/site-packages",
+        "/home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_robot_driver/local/lib/python3.10/dist-packages",
+        "/home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_moveit_config/local/lib/python3.10/dist-packages",
+        "/home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_dashboard_msgs/local/lib/python3.10/dist-packages",
+        "/home/alvaro/Desktop/workspace/install/ur_robot_driver/local/lib/python3.10/dist-packages",
+        "/home/alvaro/Desktop/workspace/install/ur_moveit_config/local/lib/python3.10/dist-packages",
+        "/home/alvaro/Desktop/workspace/install/ur_dashboard_msgs/local/lib/python3.10/dist-packages",
+        "/home/alvaro/Desktop/workspace/install/data_logger/lib/python3.10/site-packages",
+        "/home/alvaro/ros2_ws_copia/install/my_robot_controller/lib/python3.10/site-packages",
+        "/home/alvaro/ros2_ws_copia/install/movimiento_articular/lib/python3.10/site-packages",
+        "/home/alvaro/ros2_ws_copia/install/data_logger/lib/python3.10/site-packages",
+        "/home/alvaro/workspace/ros_ur_driver/install/ur_robot_driver/local/lib/python3.10/dist-packages",
+        "/home/alvaro/workspace/ros_ur_driver/install/ur_moveit_config/local/lib/python3.10/dist-packages",
+        "/home/alvaro/workspace/ros_ur_driver/install/ur_dashboard_msgs/local/lib/python3.10/dist-packages",
+        "/home/alvaro/ros2_ws/build/my_robot_controller",
+        "/home/alvaro/ros2_ws/install/my_robot_controller/lib/python3.10/site-packages",
+        "/opt/ros/humble/lib/python3.10/site-packages",
+        "/opt/ros/humble/local/lib/python3.10/dist-packages"
+    ]
+}

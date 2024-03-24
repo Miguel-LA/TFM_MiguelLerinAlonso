@@ -1,0 +1,55 @@
+[0.008s] Invoking command in '/home/alvaro/Desktop/workspace/ros_ur_driver/build/ur_moveit_config': AMENT_PREFIX_PATH=/home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_description:/home/alvaro/Desktop/workspace/install/ur:/home/alvaro/Desktop/workspace/install/ur_calibration:/home/alvaro/Desktop/workspace/install/ur_robot_driver:/home/alvaro/Desktop/workspace/install/ur_moveit_config:/home/alvaro/Desktop/workspace/install/ur_bringup:/home/alvaro/Desktop/workspace/install/ur_description:/home/alvaro/Desktop/workspace/install/ur_controllers:/home/alvaro/Desktop/workspace/install/ur_dashboard_msgs:/home/alvaro/workspace/ros_ur_driver/install/ur:/home/alvaro/workspace/ros_ur_driver/install/ur_calibration:/home/alvaro/workspace/ros_ur_driver/install/ur_robot_driver:/home/alvaro/workspace/ros_ur_driver/install/ur_moveit_config:/home/alvaro/workspace/ros_ur_driver/install/ur_bringup:/home/alvaro/workspace/ros_ur_driver/install/ur_description:/home/alvaro/workspace/ros_ur_driver/install/ur_controllers:/home/alvaro/workspace/ros_ur_driver/install/ur_dashboard_msgs:/home/alvaro/Desktop/workspace/install/data_logger:/home/alvaro/ros2_ws_copia/install/my_robot_controller:/home/alvaro/ros2_ws_copia/install/movimiento_articular:/home/alvaro/ros2_ws_copia/install/data_logger:/home/alvaro/ros2_ws/install/my_robot_controller:/opt/ros/humble /usr/bin/cmake /home/alvaro/Desktop/workspace/ros_ur_driver/src/Universal_Robots_ROS2_Driver/ur_moveit_config -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_moveit_config
+[0.058s] -- The C compiler identification is GNU 11.4.0
+[0.109s] -- The CXX compiler identification is GNU 11.4.0
+[0.116s] -- Detecting C compiler ABI info
+[0.177s] -- Detecting C compiler ABI info - done
+[0.186s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.186s] -- Detecting C compile features
+[0.187s] -- Detecting C compile features - done
+[0.190s] -- Detecting CXX compiler ABI info
+[0.264s] -- Detecting CXX compiler ABI info - done
+[0.273s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.273s] -- Detecting CXX compile features
+[0.274s] -- Detecting CXX compile features - done
+[0.277s] -- Found ament_cmake: 1.3.8 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.462s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[0.787s] -- Configuring done
+[0.791s] -- Generating done
+[0.792s] -- Build files have been written to: /home/alvaro/Desktop/workspace/ros_ur_driver/build/ur_moveit_config
+[0.796s] Invoked command in '/home/alvaro/Desktop/workspace/ros_ur_driver/build/ur_moveit_config' returned '0': AMENT_PREFIX_PATH=/home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_description:/home/alvaro/Desktop/workspace/install/ur:/home/alvaro/Desktop/workspace/install/ur_calibration:/home/alvaro/Desktop/workspace/install/ur_robot_driver:/home/alvaro/Desktop/workspace/install/ur_moveit_config:/home/alvaro/Desktop/workspace/install/ur_bringup:/home/alvaro/Desktop/workspace/install/ur_description:/home/alvaro/Desktop/workspace/install/ur_controllers:/home/alvaro/Desktop/workspace/install/ur_dashboard_msgs:/home/alvaro/workspace/ros_ur_driver/install/ur:/home/alvaro/workspace/ros_ur_driver/install/ur_calibration:/home/alvaro/workspace/ros_ur_driver/install/ur_robot_driver:/home/alvaro/workspace/ros_ur_driver/install/ur_moveit_config:/home/alvaro/workspace/ros_ur_driver/install/ur_bringup:/home/alvaro/workspace/ros_ur_driver/install/ur_description:/home/alvaro/workspace/ros_ur_driver/install/ur_controllers:/home/alvaro/workspace/ros_ur_driver/install/ur_dashboard_msgs:/home/alvaro/Desktop/workspace/install/data_logger:/home/alvaro/ros2_ws_copia/install/my_robot_controller:/home/alvaro/ros2_ws_copia/install/movimiento_articular:/home/alvaro/ros2_ws_copia/install/data_logger:/home/alvaro/ros2_ws/install/my_robot_controller:/opt/ros/humble /usr/bin/cmake /home/alvaro/Desktop/workspace/ros_ur_driver/src/Universal_Robots_ROS2_Driver/ur_moveit_config -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_moveit_config
+[0.798s] Invoking command in '/home/alvaro/Desktop/workspace/ros_ur_driver/build/ur_moveit_config': AMENT_PREFIX_PATH=/home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_description:/home/alvaro/Desktop/workspace/install/ur:/home/alvaro/Desktop/workspace/install/ur_calibration:/home/alvaro/Desktop/workspace/install/ur_robot_driver:/home/alvaro/Desktop/workspace/install/ur_moveit_config:/home/alvaro/Desktop/workspace/install/ur_bringup:/home/alvaro/Desktop/workspace/install/ur_description:/home/alvaro/Desktop/workspace/install/ur_controllers:/home/alvaro/Desktop/workspace/install/ur_dashboard_msgs:/home/alvaro/workspace/ros_ur_driver/install/ur:/home/alvaro/workspace/ros_ur_driver/install/ur_calibration:/home/alvaro/workspace/ros_ur_driver/install/ur_robot_driver:/home/alvaro/workspace/ros_ur_driver/install/ur_moveit_config:/home/alvaro/workspace/ros_ur_driver/install/ur_bringup:/home/alvaro/workspace/ros_ur_driver/install/ur_description:/home/alvaro/workspace/ros_ur_driver/install/ur_controllers:/home/alvaro/workspace/ros_ur_driver/install/ur_dashboard_msgs:/home/alvaro/Desktop/workspace/install/data_logger:/home/alvaro/ros2_ws_copia/install/my_robot_controller:/home/alvaro/ros2_ws_copia/install/movimiento_articular:/home/alvaro/ros2_ws_copia/install/data_logger:/home/alvaro/ros2_ws/install/my_robot_controller:/opt/ros/humble /usr/bin/cmake --build /home/alvaro/Desktop/workspace/ros_ur_driver/build/ur_moveit_config -- -j8 -l8
+[0.870s] Built target ament_cmake_python_copy_ur_moveit_config
+[1.038s] Traceback (most recent call last):
+[1.039s]   File "/home/alvaro/Desktop/workspace/ros_ur_driver/build/ur_moveit_config/ament_cmake_python/ur_moveit_config/setup.py", line 1, in <module>
+[1.039s]     from setuptools import find_packages
+[1.039s]   File "/home/alvaro/.local/lib/python3.10/site-packages/setuptools/__init__.py", line 16, in <module>
+[1.042s]     import setuptools.version
+[1.042s]   File "/home/alvaro/.local/lib/python3.10/site-packages/setuptools/version.py", line 1, in <module>
+[1.042s]     import pkg_resources
+[1.042s]   File "/home/alvaro/.local/lib/python3.10/site-packages/pkg_resources/__init__.py", line 3243, in <module>
+[1.043s]     def _initialize_master_working_set():
+[1.043s]   File "/home/alvaro/.local/lib/python3.10/site-packages/pkg_resources/__init__.py", line 3226, in _call_aside
+[1.044s]     f(*args, **kwargs)
+[1.045s]   File "/home/alvaro/.local/lib/python3.10/site-packages/pkg_resources/__init__.py", line 3255, in _initialize_master_working_set
+[1.046s]     working_set = WorkingSet._build_master()
+[1.046s]   File "/home/alvaro/.local/lib/python3.10/site-packages/pkg_resources/__init__.py", line 559, in _build_master
+[1.046s]     ws = cls()
+[1.046s]   File "/home/alvaro/.local/lib/python3.10/site-packages/pkg_resources/__init__.py", line 552, in __init__
+[1.046s]     self.add_entry(entry)
+[1.047s]   File "/home/alvaro/.local/lib/python3.10/site-packages/pkg_resources/__init__.py", line 608, in add_entry
+[1.047s]     for dist in find_distributions(entry, True):
+[1.047s]   File "/home/alvaro/.local/lib/python3.10/site-packages/pkg_resources/__init__.py", line 2059, in find_on_path
+[1.048s]     path_item_entries = _by_version_descending(filtered)
+[1.048s]   File "/home/alvaro/.local/lib/python3.10/site-packages/pkg_resources/__init__.py", line 2029, in _by_version_descending
+[1.049s]     return sorted(names, key=_by_version, reverse=True)
+[1.049s]   File "/home/alvaro/.local/lib/python3.10/site-packages/pkg_resources/_vendor/packaging/version.py", line 84, in __eq__
+[1.050s]     return self._compare(other, lambda s, o: s == o)
+[1.050s]   File "/home/alvaro/.local/lib/python3.10/site-packages/pkg_resources/_vendor/packaging/version.py", line 103, in _compare
+[1.050s]     return method(self._key, other._key)
+[1.050s]   File "/home/alvaro/.local/lib/python3.10/site-packages/pkg_resources/_vendor/packaging/version.py", line 84, in <lambda>
+[1.050s]     return self._compare(other, lambda s, o: s == o)
+[1.050s] KeyboardInterrupt
+[1.071s] gmake[2]: *** [CMakeFiles/ament_cmake_python_build_ur_moveit_config_egg.dir/build.make:70: CMakeFiles/ament_cmake_python_build_ur_moveit_config_egg] Interrupt
+[1.071s] gmake[1]: *** [CMakeFiles/Makefile2:164: CMakeFiles/ament_cmake_python_build_ur_moveit_config_egg.dir/all] Interrupt
+[1.071s] gmake: *** [Makefile:146: all] Interrupt
+[1.073s] Invoked command in '/home/alvaro/Desktop/workspace/ros_ur_driver/build/ur_moveit_config' returned '-2': AMENT_PREFIX_PATH=/home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_description:/home/alvaro/Desktop/workspace/install/ur:/home/alvaro/Desktop/workspace/install/ur_calibration:/home/alvaro/Desktop/workspace/install/ur_robot_driver:/home/alvaro/Desktop/workspace/install/ur_moveit_config:/home/alvaro/Desktop/workspace/install/ur_bringup:/home/alvaro/Desktop/workspace/install/ur_description:/home/alvaro/Desktop/workspace/install/ur_controllers:/home/alvaro/Desktop/workspace/install/ur_dashboard_msgs:/home/alvaro/workspace/ros_ur_driver/install/ur:/home/alvaro/workspace/ros_ur_driver/install/ur_calibration:/home/alvaro/workspace/ros_ur_driver/install/ur_robot_driver:/home/alvaro/workspace/ros_ur_driver/install/ur_moveit_config:/home/alvaro/workspace/ros_ur_driver/install/ur_bringup:/home/alvaro/workspace/ros_ur_driver/install/ur_description:/home/alvaro/workspace/ros_ur_driver/install/ur_controllers:/home/alvaro/workspace/ros_ur_driver/install/ur_dashboard_msgs:/home/alvaro/Desktop/workspace/install/data_logger:/home/alvaro/ros2_ws_copia/install/my_robot_controller:/home/alvaro/ros2_ws_copia/install/movimiento_articular:/home/alvaro/ros2_ws_copia/install/data_logger:/home/alvaro/ros2_ws/install/my_robot_controller:/opt/ros/humble /usr/bin/cmake --build /home/alvaro/Desktop/workspace/ros_ur_driver/build/ur_moveit_config -- -j8 -l8

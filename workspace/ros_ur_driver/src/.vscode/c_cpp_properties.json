@@ -1,0 +1,31 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "${default}",
+        "limitSymbolsToIncludedHeaders": false
+      },
+      "includePath": [
+        "/home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_calibration/include/**",
+        "/home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_robot_driver/include/**",
+        "/home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_controllers/include/**",
+        "/home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_dashboard_msgs/include/**",
+        "/home/alvaro/workspace/ros_ur_driver/install/ur_calibration/include/**",
+        "/home/alvaro/workspace/ros_ur_driver/install/ur_robot_driver/include/**",
+        "/home/alvaro/workspace/ros_ur_driver/install/ur_controllers/include/**",
+        "/home/alvaro/workspace/ros_ur_driver/install/ur_dashboard_msgs/include/**",
+        "/opt/ros/humble/include/**",
+        "/home/alvaro/Desktop/workspace/ros_ur_driver/src/Universal_Robots_ROS2_Driver/ur_calibration/include/**",
+        "/home/alvaro/Desktop/workspace/ros_ur_driver/src/Universal_Robots_ROS2_Driver/ur_controllers/include/**",
+        "/home/alvaro/Desktop/workspace/ros_ur_driver/src/Universal_Robots_ROS2_Driver/ur_robot_driver/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS",
+      "intelliSenseMode": "gcc-x64",
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "gnu11",
+      "cppStandard": "c++14"
+    }
+  ],
+  "version": 4
+}

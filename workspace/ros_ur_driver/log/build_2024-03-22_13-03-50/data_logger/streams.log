@@ -1,0 +1,27 @@
+[1.383s] Invoking command in '/home/alvaro/Desktop/workspace/ros_ur_driver/src/data_logger': PYTHONPATH=/home/alvaro/Desktop/workspace/ros_ur_driver/build/data_logger/prefix_override:/home/alvaro/Desktop/workspace/ros_ur_driver/install/data_logger/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/data_logger build --build-base /home/alvaro/Desktop/workspace/ros_ur_driver/build/data_logger/build install --record /home/alvaro/Desktop/workspace/ros_ur_driver/build/data_logger/install.log --single-version-externally-managed install_data
+[1.833s] running egg_info
+[1.834s] writing ../../build/data_logger/data_logger.egg-info/PKG-INFO
+[1.835s] writing dependency_links to ../../build/data_logger/data_logger.egg-info/dependency_links.txt
+[1.835s] writing entry points to ../../build/data_logger/data_logger.egg-info/entry_points.txt
+[1.836s] writing requirements to ../../build/data_logger/data_logger.egg-info/requires.txt
+[1.836s] writing top-level names to ../../build/data_logger/data_logger.egg-info/top_level.txt
+[1.839s] reading manifest file '../../build/data_logger/data_logger.egg-info/SOURCES.txt'
+[1.840s] writing manifest file '../../build/data_logger/data_logger.egg-info/SOURCES.txt'
+[1.840s] running build
+[1.840s] running build_py
+[1.841s] running install
+[1.841s] running install_lib
+[1.845s] running install_data
+[1.845s] running install_egg_info
+[1.847s] removing '/home/alvaro/Desktop/workspace/ros_ur_driver/install/data_logger/lib/python3.10/site-packages/data_logger-0.0.0-py3.10.egg-info' (and everything under it)
+[1.847s] Copying ../../build/data_logger/data_logger.egg-info to /home/alvaro/Desktop/workspace/ros_ur_driver/install/data_logger/lib/python3.10/site-packages/data_logger-0.0.0-py3.10.egg-info
+[1.849s] running install_scripts
+[1.879s] Installing analog_reader script to /home/alvaro/Desktop/workspace/ros_ur_driver/install/data_logger/lib/data_logger
+[1.879s] Installing data_emitter script to /home/alvaro/Desktop/workspace/ros_ur_driver/install/data_logger/lib/data_logger
+[1.879s] Installing data_reader script to /home/alvaro/Desktop/workspace/ros_ur_driver/install/data_logger/lib/data_logger
+[1.879s] Installing digital_reader script to /home/alvaro/Desktop/workspace/ros_ur_driver/install/data_logger/lib/data_logger
+[1.880s] Installing joint_reader script to /home/alvaro/Desktop/workspace/ros_ur_driver/install/data_logger/lib/data_logger
+[1.881s] Installing multi_logger script to /home/alvaro/Desktop/workspace/ros_ur_driver/install/data_logger/lib/data_logger
+[1.881s] Installing super_logger script to /home/alvaro/Desktop/workspace/ros_ur_driver/install/data_logger/lib/data_logger
+[1.882s] writing list of installed files to '/home/alvaro/Desktop/workspace/ros_ur_driver/build/data_logger/install.log'
+[1.930s] Invoked command in '/home/alvaro/Desktop/workspace/ros_ur_driver/src/data_logger' returned '0': PYTHONPATH=/home/alvaro/Desktop/workspace/ros_ur_driver/build/data_logger/prefix_override:/home/alvaro/Desktop/workspace/ros_ur_driver/install/data_logger/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/data_logger build --build-base /home/alvaro/Desktop/workspace/ros_ur_driver/build/data_logger/build install --record /home/alvaro/Desktop/workspace/ros_ur_driver/build/data_logger/install.log --single-version-externally-managed install_data

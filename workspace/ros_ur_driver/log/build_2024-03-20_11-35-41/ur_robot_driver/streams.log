@@ -1,0 +1,200 @@
+[0.011s] Invoking command in '/home/alvaro/Desktop/workspace/ros_ur_driver/build/ur_robot_driver': AMENT_PREFIX_PATH=/home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_controllers:/home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_description:/home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_dashboard_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_controllers:/home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_description:/home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_dashboard_msgs:/home/alvaro/Desktop/workspace/install/ur:/home/alvaro/Desktop/workspace/install/ur_calibration:/home/alvaro/Desktop/workspace/install/ur_robot_driver:/home/alvaro/Desktop/workspace/install/ur_moveit_config:/home/alvaro/Desktop/workspace/install/ur_bringup:/home/alvaro/Desktop/workspace/install/ur_description:/home/alvaro/Desktop/workspace/install/ur_controllers:/home/alvaro/Desktop/workspace/install/ur_dashboard_msgs:/home/alvaro/workspace/ros_ur_driver/install/ur:/home/alvaro/workspace/ros_ur_driver/install/ur_calibration:/home/alvaro/workspace/ros_ur_driver/install/ur_robot_driver:/home/alvaro/workspace/ros_ur_driver/install/ur_moveit_config:/home/alvaro/workspace/ros_ur_driver/install/ur_bringup:/home/alvaro/workspace/ros_ur_driver/install/ur_description:/home/alvaro/workspace/ros_ur_driver/install/ur_controllers:/home/alvaro/workspace/ros_ur_driver/install/ur_dashboard_msgs:/home/alvaro/Desktop/workspace/install/data_logger:/home/alvaro/ros2_ws_copia/install/my_robot_controller:/home/alvaro/ros2_ws_copia/install/movimiento_articular:/home/alvaro/ros2_ws_copia/install/data_logger:/home/alvaro/ros2_ws/install/my_robot_controller:/opt/ros/humble LD_LIBRARY_PATH=/home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_controllers/lib:/home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_dashboard_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_dashboard_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake /home/alvaro/Desktop/workspace/ros_ur_driver/src/Universal_Robots_ROS2_Driver/ur_robot_driver -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_robot_driver
+[0.058s] -- The C compiler identification is GNU 11.4.0
+[0.116s] -- The CXX compiler identification is GNU 11.4.0
+[0.123s] -- Detecting C compiler ABI info
+[0.189s] -- Detecting C compiler ABI info - done
+[0.200s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.200s] -- Detecting C compile features
+[0.201s] -- Detecting C compile features - done
+[0.204s] -- Detecting CXX compiler ABI info
+[0.280s] -- Detecting CXX compiler ABI info - done
+[0.287s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.287s] -- Detecting CXX compile features
+[0.288s] -- Detecting CXX compile features - done
+[0.293s] -- Found ament_cmake: 1.3.8 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.455s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[0.561s] -- Found backward_ros: 1.0.2 (/opt/ros/humble/share/backward_ros/cmake)
+[0.571s] -- Found libdw: /usr/lib/x86_64-linux-gnu/libdw.so  
+[0.577s] -- Could NOT find libbfd (missing: LIBBFD_LIBRARY LIBBFD_INCLUDE_DIR) 
+[0.577s] -- BACKWARD_HAS_UNWIND=1
+[0.577s] -- BACKWARD_HAS_BACKTRACE=0
+[0.577s] -- BACKWARD_HAS_BACKTRACE_SYMBOL=0
+[0.577s] -- BACKWARD_HAS_DW=1
+[0.577s] -- BACKWARD_HAS_BFD=0
+[0.577s] -- Found Backward: /opt/ros/humble/share/backward_ros/cmake  
+[0.580s] -- Found controller_manager: 2.40.0 (/opt/ros/humble/share/controller_manager/cmake)
+[0.630s] -- Found rosidl_generator_c: 3.1.5 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.637s] -- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.646s] -- Found rosidl_generator_cpp: 3.1.5 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.661s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.690s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[1.334s] -- Found rmw_implementation_cmake: 6.1.1 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[1.338s] -- Found rmw_fastrtps_cpp: 6.2.6 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[1.375s] -- Found TinyXML2 via Config file: TinyXML2_DIR-NOTFOUND
+[1.414s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[1.416s] -- Found TinyXML2 via Config file: TinyXML2_DIR-NOTFOUND
+[1.426s] -- Found FastRTPS: /opt/ros/humble/include  
+[1.434s] -- Found TinyXML2 via Config file: TinyXML2_DIR-NOTFOUND
+[1.441s] -- Found TinyXML2 via Config file: TinyXML2_DIR-NOTFOUND
+[1.450s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[1.461s] -- Looking for pthread.h
+[1.543s] -- Looking for pthread.h - found
+[1.543s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[1.632s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[1.633s] -- Found Threads: TRUE  
+[2.219s] -- Found rclpy: 3.3.12 (/opt/ros/humble/share/rclpy/cmake)
+[2.221s] -- Found std_srvs: 4.2.3 (/opt/ros/humble/share/std_srvs/cmake)
+[2.238s] -- Found tf2_geometry_msgs: 0.25.6 (/opt/ros/humble/share/tf2_geometry_msgs/cmake)
+[2.254s] -- Found eigen3_cmake_module: 0.1.1 (/opt/ros/humble/share/eigen3_cmake_module/cmake)
+[2.255s] -- Found Eigen3: TRUE (found version "3.4.0") 
+[2.255s] -- Ensuring Eigen3 include directory is part of orocos-kdl CMake target
+[2.497s] -- Found ur_dashboard_msgs: 2.2.10 (/home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_dashboard_msgs/share/ur_dashboard_msgs/cmake)
+[4.702s] -- Found ur_controllers: 2.2.10 (/home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_controllers/share/ur_controllers/cmake)
+[4.843s] -- Found parameter_traits: 0.3.7 (/opt/ros/humble/share/parameter_traits/cmake)
+[5.571s] -- Found ur_description: 2.1.3 (/home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_description/share/ur_description/cmake)
+[5.573s] -- Found launch_testing_ament_cmake: 1.0.5 (/opt/ros/humble/share/launch_testing_ament_cmake/cmake)
+[5.576s] -- Found python_cmake_module: 0.10.0 (/opt/ros/humble/share/python_cmake_module/cmake)
+[5.595s] -- Found PythonInterp: /usr/bin/python3 (found suitable version "3.10.12", minimum required is "3.6") 
+[5.599s] -- Found PythonLibs: /usr/lib/x86_64-linux-gnu/libpython3.10.so (found suitable version "3.10.12", minimum required is "3.5") 
+[5.600s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[5.600s] -- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.10
+[5.600s] -- Using PYTHON_LIBRARIES: /usr/lib/x86_64-linux-gnu/libpython3.10.so
+[5.619s] -- Found PythonExtra: .so  
+[5.619s] -- Configuring done
+[5.710s] -- Generating done
+[5.713s] -- Build files have been written to: /home/alvaro/Desktop/workspace/ros_ur_driver/build/ur_robot_driver
+[5.728s] Invoked command in '/home/alvaro/Desktop/workspace/ros_ur_driver/build/ur_robot_driver' returned '0': AMENT_PREFIX_PATH=/home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_controllers:/home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_description:/home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_dashboard_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_controllers:/home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_description:/home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_dashboard_msgs:/home/alvaro/Desktop/workspace/install/ur:/home/alvaro/Desktop/workspace/install/ur_calibration:/home/alvaro/Desktop/workspace/install/ur_robot_driver:/home/alvaro/Desktop/workspace/install/ur_moveit_config:/home/alvaro/Desktop/workspace/install/ur_bringup:/home/alvaro/Desktop/workspace/install/ur_description:/home/alvaro/Desktop/workspace/install/ur_controllers:/home/alvaro/Desktop/workspace/install/ur_dashboard_msgs:/home/alvaro/workspace/ros_ur_driver/install/ur:/home/alvaro/workspace/ros_ur_driver/install/ur_calibration:/home/alvaro/workspace/ros_ur_driver/install/ur_robot_driver:/home/alvaro/workspace/ros_ur_driver/install/ur_moveit_config:/home/alvaro/workspace/ros_ur_driver/install/ur_bringup:/home/alvaro/workspace/ros_ur_driver/install/ur_description:/home/alvaro/workspace/ros_ur_driver/install/ur_controllers:/home/alvaro/workspace/ros_ur_driver/install/ur_dashboard_msgs:/home/alvaro/Desktop/workspace/install/data_logger:/home/alvaro/ros2_ws_copia/install/my_robot_controller:/home/alvaro/ros2_ws_copia/install/movimiento_articular:/home/alvaro/ros2_ws_copia/install/data_logger:/home/alvaro/ros2_ws/install/my_robot_controller:/opt/ros/humble LD_LIBRARY_PATH=/home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_controllers/lib:/home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_dashboard_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_dashboard_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake /home/alvaro/Desktop/workspace/ros_ur_driver/src/Universal_Robots_ROS2_Driver/ur_robot_driver -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_robot_driver
+[5.728s] Invoking command in '/home/alvaro/Desktop/workspace/ros_ur_driver/build/ur_robot_driver': AMENT_PREFIX_PATH=/home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_controllers:/home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_description:/home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_dashboard_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_controllers:/home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_description:/home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_dashboard_msgs:/home/alvaro/Desktop/workspace/install/ur:/home/alvaro/Desktop/workspace/install/ur_calibration:/home/alvaro/Desktop/workspace/install/ur_robot_driver:/home/alvaro/Desktop/workspace/install/ur_moveit_config:/home/alvaro/Desktop/workspace/install/ur_bringup:/home/alvaro/Desktop/workspace/install/ur_description:/home/alvaro/Desktop/workspace/install/ur_controllers:/home/alvaro/Desktop/workspace/install/ur_dashboard_msgs:/home/alvaro/workspace/ros_ur_driver/install/ur:/home/alvaro/workspace/ros_ur_driver/install/ur_calibration:/home/alvaro/workspace/ros_ur_driver/install/ur_robot_driver:/home/alvaro/workspace/ros_ur_driver/install/ur_moveit_config:/home/alvaro/workspace/ros_ur_driver/install/ur_bringup:/home/alvaro/workspace/ros_ur_driver/install/ur_description:/home/alvaro/workspace/ros_ur_driver/install/ur_controllers:/home/alvaro/workspace/ros_ur_driver/install/ur_dashboard_msgs:/home/alvaro/Desktop/workspace/install/data_logger:/home/alvaro/ros2_ws_copia/install/my_robot_controller:/home/alvaro/ros2_ws_copia/install/movimiento_articular:/home/alvaro/ros2_ws_copia/install/data_logger:/home/alvaro/ros2_ws/install/my_robot_controller:/opt/ros/humble LD_LIBRARY_PATH=/home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_controllers/lib:/home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_dashboard_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_dashboard_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/alvaro/Desktop/workspace/ros_ur_driver/build/ur_robot_driver -- -j8 -l8
+[5.783s] [  6%] [32mBuilding CXX object CMakeFiles/urscript_interface.dir/src/urscript_interface.cpp.o[0m
+[5.784s] [ 13%] [32mBuilding CXX object CMakeFiles/ur_ros2_control_node.dir/src/ur_ros2_control_node.cpp.o[0m
+[5.784s] [ 20%] [32mBuilding CXX object CMakeFiles/dashboard_client.dir/src/dashboard_client_node.cpp.o[0m
+[5.785s] [ 33%] [32mBuilding CXX object CMakeFiles/ur_robot_driver_plugin.dir/src/dashboard_client_ros.cpp.o[0m
+[5.785s] [ 33%] [32mBuilding CXX object CMakeFiles/dashboard_client.dir/src/dashboard_client_ros.cpp.o[0m
+[5.785s] [ 40%] [32mBuilding CXX object CMakeFiles/controller_stopper_node.dir/src/controller_stopper.cpp.o[0m
+[5.797s] [ 46%] [32mBuilding CXX object CMakeFiles/ur_robot_driver_plugin.dir/src/hardware_interface.cpp.o[0m
+[5.797s] [ 46%] Built target ament_cmake_python_copy_ur_robot_driver
+[5.810s] [ 53%] [32mBuilding CXX object CMakeFiles/dashboard_client.dir/src/urcl_log_handler.cpp.o[0m
+[7.793s] running egg_info
+[7.794s] creating ur_robot_driver.egg-info
+[7.795s] writing ur_robot_driver.egg-info/PKG-INFO
+[7.795s] writing dependency_links to ur_robot_driver.egg-info/dependency_links.txt
+[7.795s] writing top-level names to ur_robot_driver.egg-info/top_level.txt
+[7.796s] writing manifest file 'ur_robot_driver.egg-info/SOURCES.txt'
+[7.800s] reading manifest file 'ur_robot_driver.egg-info/SOURCES.txt'
+[7.801s] writing manifest file 'ur_robot_driver.egg-info/SOURCES.txt'
+[7.848s] [ 53%] Built target ament_cmake_python_build_ur_robot_driver_egg
+[7.864s] [ 60%] [32mBuilding CXX object CMakeFiles/ur_robot_driver_plugin.dir/src/urcl_log_handler.cpp.o[0m
+[9.171s] [ 66%] [32mBuilding CXX object CMakeFiles/controller_stopper_node.dir/src/controller_stopper_node.cpp.o[0m
+[11.762s] [01m[K/home/alvaro/Desktop/workspace/ros_ur_driver/src/Universal_Robots_ROS2_Driver/ur_robot_driver/src/hardware_interface.cpp:[m[K In member function ‘[01m[Kvirtual hardware_interface::CallbackReturn ur_robot_driver::URPositionHardwareInterface::on_configure(const rclcpp_lifecycle::State&)[m[K’:
+[11.763s] [01m[K/home/alvaro/Desktop/workspace/ros_ur_driver/src/Universal_Robots_ROS2_Driver/ur_robot_driver/src/hardware_interface.cpp:432:34:[m[K [01;35m[Kwarning: [m[K‘[01m[Kvoid urcl::UrDriver::setKeepaliveCount(uint32_t)[m[K’ is deprecated: Set keepaliveCount is deprecated, instead set the robot receive timeout directly in the write commands. [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdeprecated-declarations-Wdeprecated-declarations]8;;[m[K]
+[11.763s]   432 |     [01;35m[Kur_driver_->setKeepaliveCount(keep_alive_count)[m[K;
+[11.763s]       |     [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~[m[K
+[11.763s] In file included from [01m[K/home/alvaro/Desktop/workspace/ros_ur_driver/src/Universal_Robots_ROS2_Driver/ur_robot_driver/include/ur_robot_driver/hardware_interface.hpp:55[m[K,
+[11.764s]                  from [01m[K/home/alvaro/Desktop/workspace/ros_ur_driver/src/Universal_Robots_ROS2_Driver/ur_robot_driver/src/hardware_interface.cpp:50[m[K:
+[11.764s] [01m[K/opt/ros/humble/include/ur_client_library/ur/ur_driver.h:461:3:[m[K [01;36m[Knote: [m[Kdeclared here
+[11.764s]   461 |   [01;36m[KsetKeepaliveCount[m[K(const uint32_t count);
+[11.764s]       |   [01;36m[K^~~~~~~~~~~~~~~~~[m[K
+[13.537s] [ 73%] [32m[1mLinking CXX executable ur_ros2_control_node[0m
+[13.950s] [ 73%] Built target ur_ros2_control_node
+[20.370s] [ 80%] [32m[1mLinking CXX executable urscript_interface[0m
+[20.689s] [ 80%] Built target urscript_interface
+[23.995s] [ 86%] [32m[1mLinking CXX executable controller_stopper_node[0m
+[24.279s] [ 86%] Built target controller_stopper_node
+[25.506s] [ 93%] [32m[1mLinking CXX shared library libur_robot_driver_plugin.so[0m
+[25.760s] [ 93%] Built target ur_robot_driver_plugin
+[26.795s] [100%] [32m[1mLinking CXX executable dashboard_client[0m
+[27.024s] [100%] Built target dashboard_client
+[27.036s] Invoked command in '/home/alvaro/Desktop/workspace/ros_ur_driver/build/ur_robot_driver' returned '0': AMENT_PREFIX_PATH=/home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_controllers:/home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_description:/home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_dashboard_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_controllers:/home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_description:/home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_dashboard_msgs:/home/alvaro/Desktop/workspace/install/ur:/home/alvaro/Desktop/workspace/install/ur_calibration:/home/alvaro/Desktop/workspace/install/ur_robot_driver:/home/alvaro/Desktop/workspace/install/ur_moveit_config:/home/alvaro/Desktop/workspace/install/ur_bringup:/home/alvaro/Desktop/workspace/install/ur_description:/home/alvaro/Desktop/workspace/install/ur_controllers:/home/alvaro/Desktop/workspace/install/ur_dashboard_msgs:/home/alvaro/workspace/ros_ur_driver/install/ur:/home/alvaro/workspace/ros_ur_driver/install/ur_calibration:/home/alvaro/workspace/ros_ur_driver/install/ur_robot_driver:/home/alvaro/workspace/ros_ur_driver/install/ur_moveit_config:/home/alvaro/workspace/ros_ur_driver/install/ur_bringup:/home/alvaro/workspace/ros_ur_driver/install/ur_description:/home/alvaro/workspace/ros_ur_driver/install/ur_controllers:/home/alvaro/workspace/ros_ur_driver/install/ur_dashboard_msgs:/home/alvaro/Desktop/workspace/install/data_logger:/home/alvaro/ros2_ws_copia/install/my_robot_controller:/home/alvaro/ros2_ws_copia/install/movimiento_articular:/home/alvaro/ros2_ws_copia/install/data_logger:/home/alvaro/ros2_ws/install/my_robot_controller:/opt/ros/humble LD_LIBRARY_PATH=/home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_controllers/lib:/home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_dashboard_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_dashboard_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/alvaro/Desktop/workspace/ros_ur_driver/build/ur_robot_driver -- -j8 -l8
+[27.080s] Invoking command in '/home/alvaro/Desktop/workspace/ros_ur_driver/build/ur_robot_driver': AMENT_PREFIX_PATH=/home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_controllers:/home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_description:/home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_dashboard_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_controllers:/home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_description:/home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_dashboard_msgs:/home/alvaro/Desktop/workspace/install/ur:/home/alvaro/Desktop/workspace/install/ur_calibration:/home/alvaro/Desktop/workspace/install/ur_robot_driver:/home/alvaro/Desktop/workspace/install/ur_moveit_config:/home/alvaro/Desktop/workspace/install/ur_bringup:/home/alvaro/Desktop/workspace/install/ur_description:/home/alvaro/Desktop/workspace/install/ur_controllers:/home/alvaro/Desktop/workspace/install/ur_dashboard_msgs:/home/alvaro/workspace/ros_ur_driver/install/ur:/home/alvaro/workspace/ros_ur_driver/install/ur_calibration:/home/alvaro/workspace/ros_ur_driver/install/ur_robot_driver:/home/alvaro/workspace/ros_ur_driver/install/ur_moveit_config:/home/alvaro/workspace/ros_ur_driver/install/ur_bringup:/home/alvaro/workspace/ros_ur_driver/install/ur_description:/home/alvaro/workspace/ros_ur_driver/install/ur_controllers:/home/alvaro/workspace/ros_ur_driver/install/ur_dashboard_msgs:/home/alvaro/Desktop/workspace/install/data_logger:/home/alvaro/ros2_ws_copia/install/my_robot_controller:/home/alvaro/ros2_ws_copia/install/movimiento_articular:/home/alvaro/ros2_ws_copia/install/data_logger:/home/alvaro/ros2_ws/install/my_robot_controller:/opt/ros/humble LD_LIBRARY_PATH=/home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_controllers/lib:/home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_dashboard_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_dashboard_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --install /home/alvaro/Desktop/workspace/ros_ur_driver/build/ur_robot_driver
+[27.087s] -- Install configuration: "Release"
+[27.087s] -- Installing: /home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_robot_driver/share/ur_robot_driver/hardware_interface_plugin.xml
+[27.088s] -- Installing: /home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_robot_driver/lib/ur_robot_driver/dashboard_client
+[27.089s] -- Set runtime path of "/home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_robot_driver/lib/ur_robot_driver/dashboard_client" to ""
+[27.089s] -- Installing: /home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_robot_driver/lib/ur_robot_driver/ur_ros2_control_node
+[27.089s] -- Set runtime path of "/home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_robot_driver/lib/ur_robot_driver/ur_ros2_control_node" to ""
+[27.089s] -- Installing: /home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_robot_driver/lib/ur_robot_driver/controller_stopper_node
+[27.090s] -- Set runtime path of "/home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_robot_driver/lib/ur_robot_driver/controller_stopper_node" to ""
+[27.090s] -- Installing: /home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_robot_driver/lib/ur_robot_driver/urscript_interface
+[27.091s] -- Set runtime path of "/home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_robot_driver/lib/ur_robot_driver/urscript_interface" to ""
+[27.091s] -- Installing: /home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_robot_driver/lib/libur_robot_driver_plugin.so
+[27.092s] -- Set runtime path of "/home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_robot_driver/lib/libur_robot_driver_plugin.so" to ""
+[27.093s] -- Installing: /home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_robot_driver/include
+[27.093s] -- Installing: /home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_robot_driver/include/ur_robot_driver
+[27.093s] -- Installing: /home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_robot_driver/include/ur_robot_driver/dashboard_client_ros.hpp
+[27.093s] -- Installing: /home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_robot_driver/include/ur_robot_driver/controller_stopper.hpp
+[27.093s] -- Installing: /home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_robot_driver/include/ur_robot_driver/urcl_log_handler.hpp
+[27.093s] -- Installing: /home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_robot_driver/include/ur_robot_driver/hardware_interface.hpp
+[27.093s] -- Installing: /home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_robot_driver/share/ur_robot_driver/environment/library_path.sh
+[27.093s] -- Installing: /home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_robot_driver/share/ur_robot_driver/environment/library_path.dsv
+[27.094s] -- Installing: /home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_robot_driver/share/ur_robot_driver/resources
+[27.094s] -- Installing: /home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_robot_driver/share/ur_robot_driver/resources/rtde_input_recipe.txt
+[27.094s] -- Installing: /home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_robot_driver/share/ur_robot_driver/resources/rtde_output_recipe.txt
+[27.094s] -- Installing: /home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_robot_driver/share/ur_robot_driver/resources/ros_control.urscript
+[27.094s] -- Installing: /home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_robot_driver/share/ur_robot_driver/resources/externalcontrol-1.0.5.urcap
+[27.094s] -- Installing: /home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_robot_driver/share/ur_robot_driver/resources/rs485-1.0.urcap
+[27.094s] -- Up-to-date: /home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_robot_driver/include
+[27.094s] -- Up-to-date: /home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_robot_driver/include/ur_robot_driver
+[27.094s] -- Up-to-date: /home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_robot_driver/include/ur_robot_driver/dashboard_client_ros.hpp
+[27.094s] -- Up-to-date: /home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_robot_driver/include/ur_robot_driver/controller_stopper.hpp
+[27.095s] -- Up-to-date: /home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_robot_driver/include/ur_robot_driver/urcl_log_handler.hpp
+[27.095s] -- Up-to-date: /home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_robot_driver/include/ur_robot_driver/hardware_interface.hpp
+[27.095s] -- Installing: /home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_robot_driver/share/ur_robot_driver/environment/pythonpath.sh
+[27.095s] -- Installing: /home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_robot_driver/share/ur_robot_driver/environment/pythonpath.dsv
+[27.095s] -- Installing: /home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_robot_driver/local/lib/python3.10/dist-packages/ur_robot_driver-2.2.10-py3.10.egg-info
+[27.095s] -- Installing: /home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_robot_driver/local/lib/python3.10/dist-packages/ur_robot_driver-2.2.10-py3.10.egg-info/PKG-INFO
+[27.095s] -- Installing: /home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_robot_driver/local/lib/python3.10/dist-packages/ur_robot_driver-2.2.10-py3.10.egg-info/SOURCES.txt
+[27.095s] -- Installing: /home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_robot_driver/local/lib/python3.10/dist-packages/ur_robot_driver-2.2.10-py3.10.egg-info/dependency_links.txt
+[27.095s] -- Installing: /home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_robot_driver/local/lib/python3.10/dist-packages/ur_robot_driver-2.2.10-py3.10.egg-info/top_level.txt
+[27.095s] -- Installing: /home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_robot_driver/local/lib/python3.10/dist-packages/ur_robot_driver
+[27.096s] -- Installing: /home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_robot_driver/local/lib/python3.10/dist-packages/ur_robot_driver/__init__.py
+[27.134s] Listing '/home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_robot_driver/local/lib/python3.10/dist-packages/ur_robot_driver'...
+[27.135s] Compiling '/home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_robot_driver/local/lib/python3.10/dist-packages/ur_robot_driver/__init__.py'...
+[27.139s] -- Installing: /home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_robot_driver/lib/ur_robot_driver/tool_communication.py
+[27.139s] -- Installing: /home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_robot_driver/bin/wait_dashboard_server.sh
+[27.139s] -- Installing: /home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_robot_driver/lib/ur_robot_driver/start_ursim.sh
+[27.139s] -- Installing: /home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_robot_driver/share/ur_robot_driver/config
+[27.139s] -- Installing: /home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_robot_driver/share/ur_robot_driver/config/test_velocity_goal_publishers_config.yaml
+[27.139s] -- Installing: /home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_robot_driver/share/ur_robot_driver/config/ur3_update_rate.yaml
+[27.140s] -- Installing: /home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_robot_driver/share/ur_robot_driver/config/ur16e_update_rate.yaml
+[27.140s] -- Installing: /home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_robot_driver/share/ur_robot_driver/config/ur5_update_rate.yaml
+[27.140s] -- Installing: /home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_robot_driver/share/ur_robot_driver/config/ur5e_update_rate.yaml
+[27.140s] -- Installing: /home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_robot_driver/share/ur_robot_driver/config/ur10_update_rate.yaml
+[27.140s] -- Installing: /home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_robot_driver/share/ur_robot_driver/config/ur20_update_rate.yaml
+[27.140s] -- Installing: /home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_robot_driver/share/ur_robot_driver/config/ur3e_update_rate.yaml
+[27.140s] -- Installing: /home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_robot_driver/share/ur_robot_driver/config/ur10e_update_rate.yaml
+[27.140s] -- Installing: /home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_robot_driver/share/ur_robot_driver/config/ur_controllers.yaml
+[27.141s] -- Installing: /home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_robot_driver/share/ur_robot_driver/config/test_goal_publishers_config.yaml
+[27.141s] -- Installing: /home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_robot_driver/share/ur_robot_driver/launch
+[27.141s] -- Installing: /home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_robot_driver/share/ur_robot_driver/launch/ur_control.launch.py
+[27.141s] -- Installing: /home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_robot_driver/share/ur_robot_driver/launch/test_scaled_joint_trajectory_controller.launch.py
+[27.141s] -- Installing: /home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_robot_driver/share/ur_robot_driver/launch/ur3e.launch.py
+[27.141s] -- Installing: /home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_robot_driver/share/ur_robot_driver/launch/ur20.launch.py
+[27.141s] -- Installing: /home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_robot_driver/share/ur_robot_driver/launch/test_joint_trajectory_controller.launch.py
+[27.141s] -- Installing: /home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_robot_driver/share/ur_robot_driver/launch/test_forward_velocity_controller.launch.py
+[27.142s] -- Installing: /home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_robot_driver/share/ur_robot_driver/launch/ur_dashboard_client.launch.py
+[27.142s] -- Installing: /home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_robot_driver/share/ur_robot_driver/launch/ur5e.launch.py
+[27.142s] -- Installing: /home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_robot_driver/share/ur_robot_driver/launch/ur10.launch.py
+[27.142s] -- Installing: /home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_robot_driver/share/ur_robot_driver/launch/ur3.launch.py
+[27.142s] -- Installing: /home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_robot_driver/share/ur_robot_driver/launch/ur16e.launch.py
+[27.142s] -- Installing: /home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_robot_driver/share/ur_robot_driver/launch/ur10e.launch.py
+[27.142s] -- Installing: /home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_robot_driver/share/ur_robot_driver/launch/ur5.launch.py
+[27.143s] -- Installing: /home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_robot_driver/share/ament_index/resource_index/package_run_dependencies/ur_robot_driver
+[27.143s] -- Installing: /home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_robot_driver/share/ament_index/resource_index/parent_prefix_path/ur_robot_driver
+[27.143s] -- Installing: /home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_robot_driver/share/ur_robot_driver/environment/ament_prefix_path.sh
+[27.143s] -- Installing: /home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_robot_driver/share/ur_robot_driver/environment/ament_prefix_path.dsv
+[27.143s] -- Installing: /home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_robot_driver/share/ur_robot_driver/environment/path.sh
+[27.143s] -- Installing: /home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_robot_driver/share/ur_robot_driver/environment/path.dsv
+[27.144s] -- Installing: /home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_robot_driver/share/ur_robot_driver/local_setup.bash
+[27.144s] -- Installing: /home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_robot_driver/share/ur_robot_driver/local_setup.sh
+[27.144s] -- Installing: /home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_robot_driver/share/ur_robot_driver/local_setup.zsh
+[27.144s] -- Installing: /home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_robot_driver/share/ur_robot_driver/local_setup.dsv
+[27.144s] -- Installing: /home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_robot_driver/share/ur_robot_driver/package.dsv
+[27.145s] -- Installing: /home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_robot_driver/share/ament_index/resource_index/packages/ur_robot_driver
+[27.145s] -- Installing: /home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_robot_driver/share/ament_index/resource_index/hardware_interface__pluginlib__plugin/ur_robot_driver
+[27.145s] -- Installing: /home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_robot_driver/share/ur_robot_driver/cmake/ament_cmake_export_include_directories-extras.cmake
+[27.145s] -- Installing: /home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_robot_driver/share/ur_robot_driver/cmake/ament_cmake_export_libraries-extras.cmake
+[27.145s] -- Installing: /home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_robot_driver/share/ur_robot_driver/cmake/ament_cmake_export_dependencies-extras.cmake
+[27.145s] -- Installing: /home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_robot_driver/share/ur_robot_driver/cmake/ur_robot_driverConfig.cmake
+[27.146s] -- Installing: /home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_robot_driver/share/ur_robot_driver/cmake/ur_robot_driverConfig-version.cmake
+[27.146s] -- Installing: /home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_robot_driver/share/ur_robot_driver/package.xml
+[27.148s] Invoked command in '/home/alvaro/Desktop/workspace/ros_ur_driver/build/ur_robot_driver' returned '0': AMENT_PREFIX_PATH=/home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_controllers:/home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_description:/home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_dashboard_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_controllers:/home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_description:/home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_dashboard_msgs:/home/alvaro/Desktop/workspace/install/ur:/home/alvaro/Desktop/workspace/install/ur_calibration:/home/alvaro/Desktop/workspace/install/ur_robot_driver:/home/alvaro/Desktop/workspace/install/ur_moveit_config:/home/alvaro/Desktop/workspace/install/ur_bringup:/home/alvaro/Desktop/workspace/install/ur_description:/home/alvaro/Desktop/workspace/install/ur_controllers:/home/alvaro/Desktop/workspace/install/ur_dashboard_msgs:/home/alvaro/workspace/ros_ur_driver/install/ur:/home/alvaro/workspace/ros_ur_driver/install/ur_calibration:/home/alvaro/workspace/ros_ur_driver/install/ur_robot_driver:/home/alvaro/workspace/ros_ur_driver/install/ur_moveit_config:/home/alvaro/workspace/ros_ur_driver/install/ur_bringup:/home/alvaro/workspace/ros_ur_driver/install/ur_description:/home/alvaro/workspace/ros_ur_driver/install/ur_controllers:/home/alvaro/workspace/ros_ur_driver/install/ur_dashboard_msgs:/home/alvaro/Desktop/workspace/install/data_logger:/home/alvaro/ros2_ws_copia/install/my_robot_controller:/home/alvaro/ros2_ws_copia/install/movimiento_articular:/home/alvaro/ros2_ws_copia/install/data_logger:/home/alvaro/ros2_ws/install/my_robot_controller:/opt/ros/humble LD_LIBRARY_PATH=/home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_controllers/lib:/home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_dashboard_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/alvaro/Desktop/workspace/ros_ur_driver/install/ur_dashboard_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --install /home/alvaro/Desktop/workspace/ros_ur_driver/build/ur_robot_driver

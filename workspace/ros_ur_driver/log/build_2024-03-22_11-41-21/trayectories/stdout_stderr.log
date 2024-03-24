@@ -1,0 +1,35 @@
+running egg_info
+creating ../../build/trayectories/trayectories.egg-info
+writing ../../build/trayectories/trayectories.egg-info/PKG-INFO
+writing dependency_links to ../../build/trayectories/trayectories.egg-info/dependency_links.txt
+writing entry points to ../../build/trayectories/trayectories.egg-info/entry_points.txt
+writing requirements to ../../build/trayectories/trayectories.egg-info/requires.txt
+writing top-level names to ../../build/trayectories/trayectories.egg-info/top_level.txt
+writing manifest file '../../build/trayectories/trayectories.egg-info/SOURCES.txt'
+reading manifest file '../../build/trayectories/trayectories.egg-info/SOURCES.txt'
+writing manifest file '../../build/trayectories/trayectories.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/alvaro/Desktop/workspace/ros_ur_driver/build/trayectories/build
+creating /home/alvaro/Desktop/workspace/ros_ur_driver/build/trayectories/build/lib
+creating /home/alvaro/Desktop/workspace/ros_ur_driver/build/trayectories/build/lib/trayectories
+copying trayectories/move_joints.py -> /home/alvaro/Desktop/workspace/ros_ur_driver/build/trayectories/build/lib/trayectories
+copying trayectories/__init__.py -> /home/alvaro/Desktop/workspace/ros_ur_driver/build/trayectories/build/lib/trayectories
+running install
+running install_lib
+creating /home/alvaro/Desktop/workspace/ros_ur_driver/install/trayectories/lib/python3.10/site-packages/trayectories
+copying /home/alvaro/Desktop/workspace/ros_ur_driver/build/trayectories/build/lib/trayectories/move_joints.py -> /home/alvaro/Desktop/workspace/ros_ur_driver/install/trayectories/lib/python3.10/site-packages/trayectories
+copying /home/alvaro/Desktop/workspace/ros_ur_driver/build/trayectories/build/lib/trayectories/__init__.py -> /home/alvaro/Desktop/workspace/ros_ur_driver/install/trayectories/lib/python3.10/site-packages/trayectories
+byte-compiling /home/alvaro/Desktop/workspace/ros_ur_driver/install/trayectories/lib/python3.10/site-packages/trayectories/move_joints.py to move_joints.cpython-310.pyc
+byte-compiling /home/alvaro/Desktop/workspace/ros_ur_driver/install/trayectories/lib/python3.10/site-packages/trayectories/__init__.py to __init__.cpython-310.pyc
+running install_data
+creating /home/alvaro/Desktop/workspace/ros_ur_driver/install/trayectories/share/ament_index
+creating /home/alvaro/Desktop/workspace/ros_ur_driver/install/trayectories/share/ament_index/resource_index
+creating /home/alvaro/Desktop/workspace/ros_ur_driver/install/trayectories/share/ament_index/resource_index/packages
+copying resource/trayectories -> /home/alvaro/Desktop/workspace/ros_ur_driver/install/trayectories/share/ament_index/resource_index/packages
+copying package.xml -> /home/alvaro/Desktop/workspace/ros_ur_driver/install/trayectories/share/trayectories
+running install_egg_info
+Copying ../../build/trayectories/trayectories.egg-info to /home/alvaro/Desktop/workspace/ros_ur_driver/install/trayectories/lib/python3.10/site-packages/trayectories-0.0.0-py3.10.egg-info
+running install_scripts
+Installing move_joints script to /home/alvaro/Desktop/workspace/ros_ur_driver/install/trayectories/lib/trayectories
+writing list of installed files to '/home/alvaro/Desktop/workspace/ros_ur_driver/build/trayectories/install.log'

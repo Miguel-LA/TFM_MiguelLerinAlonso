@@ -1,0 +1,150 @@
+[0.224s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'list', '-p', '--base-paths', '/home/alvaro/Desktop/workspace/ros_ur_driver']
+[0.224s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='list', build_base='build', ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['/home/alvaro/Desktop/workspace/ros_ur_driver'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], topological_order=False, names_only=False, paths_only=True, topological_graph=False, topological_graph_dot=False, topological_graph_density=False, topological_graph_legend=False, topological_graph_dot_cluster=False, topological_graph_dot_include_skipped=False, mixin_files=None, mixin=None, verb_parser=<colcon_mixin.mixin.mixin_argument.MixinArgumentDecorator object at 0x7ac39384ace0>, verb_extension=<colcon_package_information.verb.list.ListVerb object at 0x7ac393849b10>, main=<bound method ListVerb.main of <colcon_package_information.verb.list.ListVerb object at 0x7ac393849b10>>, mixin_verb=('list',))
+[0.635s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.635s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.635s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.635s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.635s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.635s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/alvaro/Desktop/workspace/ros_ur_driver'
+[0.635s] Level 1:colcon.colcon_core.package_identification:_identify(/home/alvaro/Desktop/workspace/ros_ur_driver) by extensions ['ignore', 'ignore_ament_install']
+[0.636s] Level 1:colcon.colcon_core.package_identification:_identify(/home/alvaro/Desktop/workspace/ros_ur_driver) by extension 'ignore'
+[0.636s] Level 1:colcon.colcon_core.package_identification:_identify(/home/alvaro/Desktop/workspace/ros_ur_driver) by extension 'ignore_ament_install'
+[0.636s] Level 1:colcon.colcon_core.package_identification:_identify(/home/alvaro/Desktop/workspace/ros_ur_driver) by extensions ['colcon_pkg']
+[0.636s] Level 1:colcon.colcon_core.package_identification:_identify(/home/alvaro/Desktop/workspace/ros_ur_driver) by extension 'colcon_pkg'
+[0.636s] Level 1:colcon.colcon_core.package_identification:_identify(/home/alvaro/Desktop/workspace/ros_ur_driver) by extensions ['colcon_meta']
+[0.636s] Level 1:colcon.colcon_core.package_identification:_identify(/home/alvaro/Desktop/workspace/ros_ur_driver) by extension 'colcon_meta'
+[0.636s] Level 1:colcon.colcon_core.package_identification:_identify(/home/alvaro/Desktop/workspace/ros_ur_driver) by extensions ['ros']
+[0.636s] Level 1:colcon.colcon_core.package_identification:_identify(/home/alvaro/Desktop/workspace/ros_ur_driver) by extension 'ros'
+[0.682s] Level 1:colcon.colcon_core.package_identification:_identify(/home/alvaro/Desktop/workspace/ros_ur_driver) by extensions ['cmake', 'python']
+[0.682s] Level 1:colcon.colcon_core.package_identification:_identify(/home/alvaro/Desktop/workspace/ros_ur_driver) by extension 'cmake'
+[0.682s] Level 1:colcon.colcon_core.package_identification:_identify(/home/alvaro/Desktop/workspace/ros_ur_driver) by extension 'python'
+[0.682s] Level 1:colcon.colcon_core.package_identification:_identify(/home/alvaro/Desktop/workspace/ros_ur_driver) by extensions ['python_setup_py']
+[0.682s] Level 1:colcon.colcon_core.package_identification:_identify(/home/alvaro/Desktop/workspace/ros_ur_driver) by extension 'python_setup_py'
+[0.683s] Level 1:colcon.colcon_core.package_identification:_identify(/home/alvaro/Desktop/workspace/ros_ur_driver/build) by extensions ['ignore', 'ignore_ament_install']
+[0.683s] Level 1:colcon.colcon_core.package_identification:_identify(/home/alvaro/Desktop/workspace/ros_ur_driver/build) by extension 'ignore'
+[0.683s] Level 1:colcon.colcon_core.package_identification:_identify(/home/alvaro/Desktop/workspace/ros_ur_driver/build) ignored
+[0.683s] Level 1:colcon.colcon_core.package_identification:_identify(/home/alvaro/Desktop/workspace/ros_ur_driver/install) by extensions ['ignore', 'ignore_ament_install']
+[0.683s] Level 1:colcon.colcon_core.package_identification:_identify(/home/alvaro/Desktop/workspace/ros_ur_driver/install) by extension 'ignore'
+[0.683s] Level 1:colcon.colcon_core.package_identification:_identify(/home/alvaro/Desktop/workspace/ros_ur_driver/install) ignored
+[0.684s] Level 1:colcon.colcon_core.package_identification:_identify(/home/alvaro/Desktop/workspace/ros_ur_driver/log) by extensions ['ignore', 'ignore_ament_install']
+[0.684s] Level 1:colcon.colcon_core.package_identification:_identify(/home/alvaro/Desktop/workspace/ros_ur_driver/log) by extension 'ignore'
+[0.684s] Level 1:colcon.colcon_core.package_identification:_identify(/home/alvaro/Desktop/workspace/ros_ur_driver/log) ignored
+[0.684s] Level 1:colcon.colcon_core.package_identification:_identify(/home/alvaro/Desktop/workspace/ros_ur_driver/src) by extensions ['ignore', 'ignore_ament_install']
+[0.684s] Level 1:colcon.colcon_core.package_identification:_identify(/home/alvaro/Desktop/workspace/ros_ur_driver/src) by extension 'ignore'
+[0.684s] Level 1:colcon.colcon_core.package_identification:_identify(/home/alvaro/Desktop/workspace/ros_ur_driver/src) by extension 'ignore_ament_install'
+[0.685s] Level 1:colcon.colcon_core.package_identification:_identify(/home/alvaro/Desktop/workspace/ros_ur_driver/src) by extensions ['colcon_pkg']
+[0.685s] Level 1:colcon.colcon_core.package_identification:_identify(/home/alvaro/Desktop/workspace/ros_ur_driver/src) by extension 'colcon_pkg'
+[0.685s] Level 1:colcon.colcon_core.package_identification:_identify(/home/alvaro/Desktop/workspace/ros_ur_driver/src) by extensions ['colcon_meta']
+[0.685s] Level 1:colcon.colcon_core.package_identification:_identify(/home/alvaro/Desktop/workspace/ros_ur_driver/src) by extension 'colcon_meta'
+[0.685s] Level 1:colcon.colcon_core.package_identification:_identify(/home/alvaro/Desktop/workspace/ros_ur_driver/src) by extensions ['ros']
+[0.685s] Level 1:colcon.colcon_core.package_identification:_identify(/home/alvaro/Desktop/workspace/ros_ur_driver/src) by extension 'ros'
+[0.685s] Level 1:colcon.colcon_core.package_identification:_identify(/home/alvaro/Desktop/workspace/ros_ur_driver/src) by extensions ['cmake', 'python']
+[0.685s] Level 1:colcon.colcon_core.package_identification:_identify(/home/alvaro/Desktop/workspace/ros_ur_driver/src) by extension 'cmake'
+[0.685s] Level 1:colcon.colcon_core.package_identification:_identify(/home/alvaro/Desktop/workspace/ros_ur_driver/src) by extension 'python'
+[0.685s] Level 1:colcon.colcon_core.package_identification:_identify(/home/alvaro/Desktop/workspace/ros_ur_driver/src) by extensions ['python_setup_py']
+[0.685s] Level 1:colcon.colcon_core.package_identification:_identify(/home/alvaro/Desktop/workspace/ros_ur_driver/src) by extension 'python_setup_py'
+[0.686s] Level 1:colcon.colcon_core.package_identification:_identify(/home/alvaro/Desktop/workspace/ros_ur_driver/src/Universal_Robots_ROS2_Description) by extensions ['ignore', 'ignore_ament_install']
+[0.686s] Level 1:colcon.colcon_core.package_identification:_identify(/home/alvaro/Desktop/workspace/ros_ur_driver/src/Universal_Robots_ROS2_Description) by extension 'ignore'
+[0.686s] Level 1:colcon.colcon_core.package_identification:_identify(/home/alvaro/Desktop/workspace/ros_ur_driver/src/Universal_Robots_ROS2_Description) by extension 'ignore_ament_install'
+[0.686s] Level 1:colcon.colcon_core.package_identification:_identify(/home/alvaro/Desktop/workspace/ros_ur_driver/src/Universal_Robots_ROS2_Description) by extensions ['colcon_pkg']
+[0.686s] Level 1:colcon.colcon_core.package_identification:_identify(/home/alvaro/Desktop/workspace/ros_ur_driver/src/Universal_Robots_ROS2_Description) by extension 'colcon_pkg'
+[0.686s] Level 1:colcon.colcon_core.package_identification:_identify(/home/alvaro/Desktop/workspace/ros_ur_driver/src/Universal_Robots_ROS2_Description) by extensions ['colcon_meta']
+[0.686s] Level 1:colcon.colcon_core.package_identification:_identify(/home/alvaro/Desktop/workspace/ros_ur_driver/src/Universal_Robots_ROS2_Description) by extension 'colcon_meta'
+[0.686s] Level 1:colcon.colcon_core.package_identification:_identify(/home/alvaro/Desktop/workspace/ros_ur_driver/src/Universal_Robots_ROS2_Description) by extensions ['ros']
+[0.687s] Level 1:colcon.colcon_core.package_identification:_identify(/home/alvaro/Desktop/workspace/ros_ur_driver/src/Universal_Robots_ROS2_Description) by extension 'ros'
+[0.694s] DEBUG:colcon.colcon_core.package_identification:Package '/home/alvaro/Desktop/workspace/ros_ur_driver/src/Universal_Robots_ROS2_Description' with type 'ros.ament_cmake' and name 'ur_description'
+[0.694s] Level 1:colcon.colcon_core.package_identification:_identify(/home/alvaro/Desktop/workspace/ros_ur_driver/src/Universal_Robots_ROS2_Driver) by extensions ['ignore', 'ignore_ament_install']
+[0.694s] Level 1:colcon.colcon_core.package_identification:_identify(/home/alvaro/Desktop/workspace/ros_ur_driver/src/Universal_Robots_ROS2_Driver) by extension 'ignore'
+[0.694s] Level 1:colcon.colcon_core.package_identification:_identify(/home/alvaro/Desktop/workspace/ros_ur_driver/src/Universal_Robots_ROS2_Driver) by extension 'ignore_ament_install'
+[0.695s] Level 1:colcon.colcon_core.package_identification:_identify(/home/alvaro/Desktop/workspace/ros_ur_driver/src/Universal_Robots_ROS2_Driver) by extensions ['colcon_pkg']
+[0.695s] Level 1:colcon.colcon_core.package_identification:_identify(/home/alvaro/Desktop/workspace/ros_ur_driver/src/Universal_Robots_ROS2_Driver) by extension 'colcon_pkg'
+[0.695s] Level 1:colcon.colcon_core.package_identification:_identify(/home/alvaro/Desktop/workspace/ros_ur_driver/src/Universal_Robots_ROS2_Driver) by extensions ['colcon_meta']
+[0.695s] Level 1:colcon.colcon_core.package_identification:_identify(/home/alvaro/Desktop/workspace/ros_ur_driver/src/Universal_Robots_ROS2_Driver) by extension 'colcon_meta'
+[0.695s] Level 1:colcon.colcon_core.package_identification:_identify(/home/alvaro/Desktop/workspace/ros_ur_driver/src/Universal_Robots_ROS2_Driver) by extensions ['ros']
+[0.695s] Level 1:colcon.colcon_core.package_identification:_identify(/home/alvaro/Desktop/workspace/ros_ur_driver/src/Universal_Robots_ROS2_Driver) by extension 'ros'
+[0.695s] Level 1:colcon.colcon_core.package_identification:_identify(/home/alvaro/Desktop/workspace/ros_ur_driver/src/Universal_Robots_ROS2_Driver) by extensions ['cmake', 'python']
+[0.695s] Level 1:colcon.colcon_core.package_identification:_identify(/home/alvaro/Desktop/workspace/ros_ur_driver/src/Universal_Robots_ROS2_Driver) by extension 'cmake'
+[0.695s] Level 1:colcon.colcon_core.package_identification:_identify(/home/alvaro/Desktop/workspace/ros_ur_driver/src/Universal_Robots_ROS2_Driver) by extension 'python'
+[0.695s] Level 1:colcon.colcon_core.package_identification:_identify(/home/alvaro/Desktop/workspace/ros_ur_driver/src/Universal_Robots_ROS2_Driver) by extensions ['python_setup_py']
+[0.695s] Level 1:colcon.colcon_core.package_identification:_identify(/home/alvaro/Desktop/workspace/ros_ur_driver/src/Universal_Robots_ROS2_Driver) by extension 'python_setup_py'
+[0.696s] Level 1:colcon.colcon_core.package_identification:_identify(/home/alvaro/Desktop/workspace/ros_ur_driver/src/Universal_Robots_ROS2_Driver/ur) by extensions ['ignore', 'ignore_ament_install']
+[0.696s] Level 1:colcon.colcon_core.package_identification:_identify(/home/alvaro/Desktop/workspace/ros_ur_driver/src/Universal_Robots_ROS2_Driver/ur) by extension 'ignore'
+[0.696s] Level 1:colcon.colcon_core.package_identification:_identify(/home/alvaro/Desktop/workspace/ros_ur_driver/src/Universal_Robots_ROS2_Driver/ur) by extension 'ignore_ament_install'
+[0.696s] Level 1:colcon.colcon_core.package_identification:_identify(/home/alvaro/Desktop/workspace/ros_ur_driver/src/Universal_Robots_ROS2_Driver/ur) by extensions ['colcon_pkg']
+[0.696s] Level 1:colcon.colcon_core.package_identification:_identify(/home/alvaro/Desktop/workspace/ros_ur_driver/src/Universal_Robots_ROS2_Driver/ur) by extension 'colcon_pkg'
+[0.696s] Level 1:colcon.colcon_core.package_identification:_identify(/home/alvaro/Desktop/workspace/ros_ur_driver/src/Universal_Robots_ROS2_Driver/ur) by extensions ['colcon_meta']
+[0.696s] Level 1:colcon.colcon_core.package_identification:_identify(/home/alvaro/Desktop/workspace/ros_ur_driver/src/Universal_Robots_ROS2_Driver/ur) by extension 'colcon_meta'
+[0.696s] Level 1:colcon.colcon_core.package_identification:_identify(/home/alvaro/Desktop/workspace/ros_ur_driver/src/Universal_Robots_ROS2_Driver/ur) by extensions ['ros']
+[0.696s] Level 1:colcon.colcon_core.package_identification:_identify(/home/alvaro/Desktop/workspace/ros_ur_driver/src/Universal_Robots_ROS2_Driver/ur) by extension 'ros'
+[0.697s] DEBUG:colcon.colcon_core.package_identification:Package '/home/alvaro/Desktop/workspace/ros_ur_driver/src/Universal_Robots_ROS2_Driver/ur' with type 'ros.ament_cmake' and name 'ur'
+[0.698s] Level 1:colcon.colcon_core.package_identification:_identify(/home/alvaro/Desktop/workspace/ros_ur_driver/src/Universal_Robots_ROS2_Driver/ur_bringup) by extensions ['ignore', 'ignore_ament_install']
+[0.698s] Level 1:colcon.colcon_core.package_identification:_identify(/home/alvaro/Desktop/workspace/ros_ur_driver/src/Universal_Robots_ROS2_Driver/ur_bringup) by extension 'ignore'
+[0.698s] Level 1:colcon.colcon_core.package_identification:_identify(/home/alvaro/Desktop/workspace/ros_ur_driver/src/Universal_Robots_ROS2_Driver/ur_bringup) by extension 'ignore_ament_install'
+[0.698s] Level 1:colcon.colcon_core.package_identification:_identify(/home/alvaro/Desktop/workspace/ros_ur_driver/src/Universal_Robots_ROS2_Driver/ur_bringup) by extensions ['colcon_pkg']
+[0.698s] Level 1:colcon.colcon_core.package_identification:_identify(/home/alvaro/Desktop/workspace/ros_ur_driver/src/Universal_Robots_ROS2_Driver/ur_bringup) by extension 'colcon_pkg'
+[0.698s] Level 1:colcon.colcon_core.package_identification:_identify(/home/alvaro/Desktop/workspace/ros_ur_driver/src/Universal_Robots_ROS2_Driver/ur_bringup) by extensions ['colcon_meta']
+[0.698s] Level 1:colcon.colcon_core.package_identification:_identify(/home/alvaro/Desktop/workspace/ros_ur_driver/src/Universal_Robots_ROS2_Driver/ur_bringup) by extension 'colcon_meta'
+[0.698s] Level 1:colcon.colcon_core.package_identification:_identify(/home/alvaro/Desktop/workspace/ros_ur_driver/src/Universal_Robots_ROS2_Driver/ur_bringup) by extensions ['ros']
+[0.698s] Level 1:colcon.colcon_core.package_identification:_identify(/home/alvaro/Desktop/workspace/ros_ur_driver/src/Universal_Robots_ROS2_Driver/ur_bringup) by extension 'ros'
+[0.719s] DEBUG:colcon.colcon_core.package_identification:Package '/home/alvaro/Desktop/workspace/ros_ur_driver/src/Universal_Robots_ROS2_Driver/ur_bringup' with type 'ros.ament_cmake' and name 'ur_bringup'
+[0.720s] Level 1:colcon.colcon_core.package_identification:_identify(/home/alvaro/Desktop/workspace/ros_ur_driver/src/Universal_Robots_ROS2_Driver/ur_calibration) by extensions ['ignore', 'ignore_ament_install']
+[0.720s] Level 1:colcon.colcon_core.package_identification:_identify(/home/alvaro/Desktop/workspace/ros_ur_driver/src/Universal_Robots_ROS2_Driver/ur_calibration) by extension 'ignore'
+[0.720s] Level 1:colcon.colcon_core.package_identification:_identify(/home/alvaro/Desktop/workspace/ros_ur_driver/src/Universal_Robots_ROS2_Driver/ur_calibration) by extension 'ignore_ament_install'
+[0.720s] Level 1:colcon.colcon_core.package_identification:_identify(/home/alvaro/Desktop/workspace/ros_ur_driver/src/Universal_Robots_ROS2_Driver/ur_calibration) by extensions ['colcon_pkg']
+[0.720s] Level 1:colcon.colcon_core.package_identification:_identify(/home/alvaro/Desktop/workspace/ros_ur_driver/src/Universal_Robots_ROS2_Driver/ur_calibration) by extension 'colcon_pkg'
+[0.720s] Level 1:colcon.colcon_core.package_identification:_identify(/home/alvaro/Desktop/workspace/ros_ur_driver/src/Universal_Robots_ROS2_Driver/ur_calibration) by extensions ['colcon_meta']
+[0.720s] Level 1:colcon.colcon_core.package_identification:_identify(/home/alvaro/Desktop/workspace/ros_ur_driver/src/Universal_Robots_ROS2_Driver/ur_calibration) by extension 'colcon_meta'
+[0.721s] Level 1:colcon.colcon_core.package_identification:_identify(/home/alvaro/Desktop/workspace/ros_ur_driver/src/Universal_Robots_ROS2_Driver/ur_calibration) by extensions ['ros']
+[0.721s] Level 1:colcon.colcon_core.package_identification:_identify(/home/alvaro/Desktop/workspace/ros_ur_driver/src/Universal_Robots_ROS2_Driver/ur_calibration) by extension 'ros'
+[0.722s] DEBUG:colcon.colcon_core.package_identification:Package '/home/alvaro/Desktop/workspace/ros_ur_driver/src/Universal_Robots_ROS2_Driver/ur_calibration' with type 'ros.ament_cmake' and name 'ur_calibration'
+[0.723s] Level 1:colcon.colcon_core.package_identification:_identify(/home/alvaro/Desktop/workspace/ros_ur_driver/src/Universal_Robots_ROS2_Driver/ur_controllers) by extensions ['ignore', 'ignore_ament_install']
+[0.723s] Level 1:colcon.colcon_core.package_identification:_identify(/home/alvaro/Desktop/workspace/ros_ur_driver/src/Universal_Robots_ROS2_Driver/ur_controllers) by extension 'ignore'
+[0.723s] Level 1:colcon.colcon_core.package_identification:_identify(/home/alvaro/Desktop/workspace/ros_ur_driver/src/Universal_Robots_ROS2_Driver/ur_controllers) by extension 'ignore_ament_install'
+[0.723s] Level 1:colcon.colcon_core.package_identification:_identify(/home/alvaro/Desktop/workspace/ros_ur_driver/src/Universal_Robots_ROS2_Driver/ur_controllers) by extensions ['colcon_pkg']
+[0.723s] Level 1:colcon.colcon_core.package_identification:_identify(/home/alvaro/Desktop/workspace/ros_ur_driver/src/Universal_Robots_ROS2_Driver/ur_controllers) by extension 'colcon_pkg'
+[0.723s] Level 1:colcon.colcon_core.package_identification:_identify(/home/alvaro/Desktop/workspace/ros_ur_driver/src/Universal_Robots_ROS2_Driver/ur_controllers) by extensions ['colcon_meta']
+[0.723s] Level 1:colcon.colcon_core.package_identification:_identify(/home/alvaro/Desktop/workspace/ros_ur_driver/src/Universal_Robots_ROS2_Driver/ur_controllers) by extension 'colcon_meta'
+[0.723s] Level 1:colcon.colcon_core.package_identification:_identify(/home/alvaro/Desktop/workspace/ros_ur_driver/src/Universal_Robots_ROS2_Driver/ur_controllers) by extensions ['ros']
+[0.723s] Level 1:colcon.colcon_core.package_identification:_identify(/home/alvaro/Desktop/workspace/ros_ur_driver/src/Universal_Robots_ROS2_Driver/ur_controllers) by extension 'ros'
+[0.727s] DEBUG:colcon.colcon_core.package_identification:Package '/home/alvaro/Desktop/workspace/ros_ur_driver/src/Universal_Robots_ROS2_Driver/ur_controllers' with type 'ros.ament_cmake' and name 'ur_controllers'
+[0.727s] Level 1:colcon.colcon_core.package_identification:_identify(/home/alvaro/Desktop/workspace/ros_ur_driver/src/Universal_Robots_ROS2_Driver/ur_dashboard_msgs) by extensions ['ignore', 'ignore_ament_install']
+[0.727s] Level 1:colcon.colcon_core.package_identification:_identify(/home/alvaro/Desktop/workspace/ros_ur_driver/src/Universal_Robots_ROS2_Driver/ur_dashboard_msgs) by extension 'ignore'
+[0.728s] Level 1:colcon.colcon_core.package_identification:_identify(/home/alvaro/Desktop/workspace/ros_ur_driver/src/Universal_Robots_ROS2_Driver/ur_dashboard_msgs) by extension 'ignore_ament_install'
+[0.728s] Level 1:colcon.colcon_core.package_identification:_identify(/home/alvaro/Desktop/workspace/ros_ur_driver/src/Universal_Robots_ROS2_Driver/ur_dashboard_msgs) by extensions ['colcon_pkg']
+[0.728s] Level 1:colcon.colcon_core.package_identification:_identify(/home/alvaro/Desktop/workspace/ros_ur_driver/src/Universal_Robots_ROS2_Driver/ur_dashboard_msgs) by extension 'colcon_pkg'
+[0.728s] Level 1:colcon.colcon_core.package_identification:_identify(/home/alvaro/Desktop/workspace/ros_ur_driver/src/Universal_Robots_ROS2_Driver/ur_dashboard_msgs) by extensions ['colcon_meta']
+[0.728s] Level 1:colcon.colcon_core.package_identification:_identify(/home/alvaro/Desktop/workspace/ros_ur_driver/src/Universal_Robots_ROS2_Driver/ur_dashboard_msgs) by extension 'colcon_meta'
+[0.728s] Level 1:colcon.colcon_core.package_identification:_identify(/home/alvaro/Desktop/workspace/ros_ur_driver/src/Universal_Robots_ROS2_Driver/ur_dashboard_msgs) by extensions ['ros']
+[0.728s] Level 1:colcon.colcon_core.package_identification:_identify(/home/alvaro/Desktop/workspace/ros_ur_driver/src/Universal_Robots_ROS2_Driver/ur_dashboard_msgs) by extension 'ros'
+[0.729s] DEBUG:colcon.colcon_core.package_identification:Package '/home/alvaro/Desktop/workspace/ros_ur_driver/src/Universal_Robots_ROS2_Driver/ur_dashboard_msgs' with type 'ros.ament_cmake' and name 'ur_dashboard_msgs'
+[0.730s] Level 1:colcon.colcon_core.package_identification:_identify(/home/alvaro/Desktop/workspace/ros_ur_driver/src/Universal_Robots_ROS2_Driver/ur_moveit_config) by extensions ['ignore', 'ignore_ament_install']
+[0.730s] Level 1:colcon.colcon_core.package_identification:_identify(/home/alvaro/Desktop/workspace/ros_ur_driver/src/Universal_Robots_ROS2_Driver/ur_moveit_config) by extension 'ignore'
+[0.730s] Level 1:colcon.colcon_core.package_identification:_identify(/home/alvaro/Desktop/workspace/ros_ur_driver/src/Universal_Robots_ROS2_Driver/ur_moveit_config) by extension 'ignore_ament_install'
+[0.730s] Level 1:colcon.colcon_core.package_identification:_identify(/home/alvaro/Desktop/workspace/ros_ur_driver/src/Universal_Robots_ROS2_Driver/ur_moveit_config) by extensions ['colcon_pkg']
+[0.730s] Level 1:colcon.colcon_core.package_identification:_identify(/home/alvaro/Desktop/workspace/ros_ur_driver/src/Universal_Robots_ROS2_Driver/ur_moveit_config) by extension 'colcon_pkg'
+[0.730s] Level 1:colcon.colcon_core.package_identification:_identify(/home/alvaro/Desktop/workspace/ros_ur_driver/src/Universal_Robots_ROS2_Driver/ur_moveit_config) by extensions ['colcon_meta']
+[0.730s] Level 1:colcon.colcon_core.package_identification:_identify(/home/alvaro/Desktop/workspace/ros_ur_driver/src/Universal_Robots_ROS2_Driver/ur_moveit_config) by extension 'colcon_meta'
+[0.730s] Level 1:colcon.colcon_core.package_identification:_identify(/home/alvaro/Desktop/workspace/ros_ur_driver/src/Universal_Robots_ROS2_Driver/ur_moveit_config) by extensions ['ros']
+[0.733s] Level 1:colcon.colcon_core.package_identification:_identify(/home/alvaro/Desktop/workspace/ros_ur_driver/src/Universal_Robots_ROS2_Driver/ur_moveit_config) by extension 'ros'
+[0.734s] DEBUG:colcon.colcon_core.package_identification:Package '/home/alvaro/Desktop/workspace/ros_ur_driver/src/Universal_Robots_ROS2_Driver/ur_moveit_config' with type 'ros.ament_cmake' and name 'ur_moveit_config'
+[0.735s] Level 1:colcon.colcon_core.package_identification:_identify(/home/alvaro/Desktop/workspace/ros_ur_driver/src/Universal_Robots_ROS2_Driver/ur_robot_driver) by extensions ['ignore', 'ignore_ament_install']
+[0.735s] Level 1:colcon.colcon_core.package_identification:_identify(/home/alvaro/Desktop/workspace/ros_ur_driver/src/Universal_Robots_ROS2_Driver/ur_robot_driver) by extension 'ignore'
+[0.735s] Level 1:colcon.colcon_core.package_identification:_identify(/home/alvaro/Desktop/workspace/ros_ur_driver/src/Universal_Robots_ROS2_Driver/ur_robot_driver) by extension 'ignore_ament_install'
+[0.735s] Level 1:colcon.colcon_core.package_identification:_identify(/home/alvaro/Desktop/workspace/ros_ur_driver/src/Universal_Robots_ROS2_Driver/ur_robot_driver) by extensions ['colcon_pkg']
+[0.735s] Level 1:colcon.colcon_core.package_identification:_identify(/home/alvaro/Desktop/workspace/ros_ur_driver/src/Universal_Robots_ROS2_Driver/ur_robot_driver) by extension 'colcon_pkg'
+[0.735s] Level 1:colcon.colcon_core.package_identification:_identify(/home/alvaro/Desktop/workspace/ros_ur_driver/src/Universal_Robots_ROS2_Driver/ur_robot_driver) by extensions ['colcon_meta']
+[0.735s] Level 1:colcon.colcon_core.package_identification:_identify(/home/alvaro/Desktop/workspace/ros_ur_driver/src/Universal_Robots_ROS2_Driver/ur_robot_driver) by extension 'colcon_meta'
+[0.735s] Level 1:colcon.colcon_core.package_identification:_identify(/home/alvaro/Desktop/workspace/ros_ur_driver/src/Universal_Robots_ROS2_Driver/ur_robot_driver) by extensions ['ros']
+[0.736s] Level 1:colcon.colcon_core.package_identification:_identify(/home/alvaro/Desktop/workspace/ros_ur_driver/src/Universal_Robots_ROS2_Driver/ur_robot_driver) by extension 'ros'
+[0.748s] DEBUG:colcon.colcon_core.package_identification:Package '/home/alvaro/Desktop/workspace/ros_ur_driver/src/Universal_Robots_ROS2_Driver/ur_robot_driver' with type 'ros.ament_cmake' and name 'ur_robot_driver'
+[0.749s] Level 1:colcon.colcon_core.package_identification:_identify(/home/alvaro/Desktop/workspace/ros_ur_driver/src/data_logger) by extensions ['ignore', 'ignore_ament_install']
+[0.749s] Level 1:colcon.colcon_core.package_identification:_identify(/home/alvaro/Desktop/workspace/ros_ur_driver/src/data_logger) by extension 'ignore'
+[0.749s] Level 1:colcon.colcon_core.package_identification:_identify(/home/alvaro/Desktop/workspace/ros_ur_driver/src/data_logger) by extension 'ignore_ament_install'
+[0.749s] Level 1:colcon.colcon_core.package_identification:_identify(/home/alvaro/Desktop/workspace/ros_ur_driver/src/data_logger) by extensions ['colcon_pkg']
+[0.749s] Level 1:colcon.colcon_core.package_identification:_identify(/home/alvaro/Desktop/workspace/ros_ur_driver/src/data_logger) by extension 'colcon_pkg'
+[0.749s] Level 1:colcon.colcon_core.package_identification:_identify(/home/alvaro/Desktop/workspace/ros_ur_driver/src/data_logger) by extensions ['colcon_meta']
+[0.749s] Level 1:colcon.colcon_core.package_identification:_identify(/home/alvaro/Desktop/workspace/ros_ur_driver/src/data_logger) by extension 'colcon_meta'
+[0.749s] Level 1:colcon.colcon_core.package_identification:_identify(/home/alvaro/Desktop/workspace/ros_ur_driver/src/data_logger) by extensions ['ros']
+[0.749s] Level 1:colcon.colcon_core.package_identification:_identify(/home/alvaro/Desktop/workspace/ros_ur_driver/src/data_logger) by extension 'ros'
+[0.751s] DEBUG:colcon.colcon_core.package_identification:Package '/home/alvaro/Desktop/workspace/ros_ur_driver/src/data_logger' with type 'ros.ament_python' and name 'data_logger'
+[0.751s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults

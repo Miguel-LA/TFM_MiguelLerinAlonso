@@ -1,0 +1,9 @@
+[console_scripts]
+analog_reader = data_logger.analog_reader:main
+data_emitter = data_logger.data_emitter:main
+data_reader = data_logger.data_reader:main
+digital_reader = data_logger.digital_reader:main
+joint_reader = data_logger.joint_reader:main
+multi_logger = data_logger.multi_logger:main
+super_logger = data_logger.super_logger:main
+

@@ -1,0 +1,33 @@
+Traceback (most recent call last):
+  File "/home/alvaro/Desktop/workspace/ros_ur_driver/build/ur_moveit_config/ament_cmake_python/ur_moveit_config/setup.py", line 1, in <module>
+    from setuptools import find_packages
+  File "/home/alvaro/.local/lib/python3.10/site-packages/setuptools/__init__.py", line 16, in <module>
+    import setuptools.version
+  File "/home/alvaro/.local/lib/python3.10/site-packages/setuptools/version.py", line 1, in <module>
+    import pkg_resources
+  File "/home/alvaro/.local/lib/python3.10/site-packages/pkg_resources/__init__.py", line 3243, in <module>
+    def _initialize_master_working_set():
+  File "/home/alvaro/.local/lib/python3.10/site-packages/pkg_resources/__init__.py", line 3226, in _call_aside
+    f(*args, **kwargs)
+  File "/home/alvaro/.local/lib/python3.10/site-packages/pkg_resources/__init__.py", line 3255, in _initialize_master_working_set
+    working_set = WorkingSet._build_master()
+  File "/home/alvaro/.local/lib/python3.10/site-packages/pkg_resources/__init__.py", line 559, in _build_master
+    ws = cls()
+  File "/home/alvaro/.local/lib/python3.10/site-packages/pkg_resources/__init__.py", line 552, in __init__
+    self.add_entry(entry)
+  File "/home/alvaro/.local/lib/python3.10/site-packages/pkg_resources/__init__.py", line 608, in add_entry
+    for dist in find_distributions(entry, True):
+  File "/home/alvaro/.local/lib/python3.10/site-packages/pkg_resources/__init__.py", line 2059, in find_on_path
+    path_item_entries = _by_version_descending(filtered)
+  File "/home/alvaro/.local/lib/python3.10/site-packages/pkg_resources/__init__.py", line 2029, in _by_version_descending
+    return sorted(names, key=_by_version, reverse=True)
+  File "/home/alvaro/.local/lib/python3.10/site-packages/pkg_resources/_vendor/packaging/version.py", line 84, in __eq__
+    return self._compare(other, lambda s, o: s == o)
+  File "/home/alvaro/.local/lib/python3.10/site-packages/pkg_resources/_vendor/packaging/version.py", line 103, in _compare
+    return method(self._key, other._key)
+  File "/home/alvaro/.local/lib/python3.10/site-packages/pkg_resources/_vendor/packaging/version.py", line 84, in <lambda>
+    return self._compare(other, lambda s, o: s == o)
+KeyboardInterrupt
+gmake[2]: *** [CMakeFiles/ament_cmake_python_build_ur_moveit_config_egg.dir/build.make:70: CMakeFiles/ament_cmake_python_build_ur_moveit_config_egg] Interrupt
+gmake[1]: *** [CMakeFiles/Makefile2:164: CMakeFiles/ament_cmake_python_build_ur_moveit_config_egg.dir/all] Interrupt
+gmake: *** [Makefile:146: all] Interrupt

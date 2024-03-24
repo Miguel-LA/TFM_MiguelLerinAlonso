@@ -1,0 +1,25 @@
+[1.312s] Invoking command in '/home/alvaro/Desktop/workspace/ros_ur_driver/src/trayectories': PYTHONPATH=/home/alvaro/Desktop/workspace/ros_ur_driver/build/trayectories/prefix_override:/home/alvaro/Desktop/workspace/ros_ur_driver/install/trayectories/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/trayectories build --build-base /home/alvaro/Desktop/workspace/ros_ur_driver/build/trayectories/build install --record /home/alvaro/Desktop/workspace/ros_ur_driver/build/trayectories/install.log --single-version-externally-managed install_data
+[1.709s] running egg_info
+[1.710s] writing ../../build/trayectories/trayectories.egg-info/PKG-INFO
+[1.710s] writing dependency_links to ../../build/trayectories/trayectories.egg-info/dependency_links.txt
+[1.710s] writing entry points to ../../build/trayectories/trayectories.egg-info/entry_points.txt
+[1.710s] writing requirements to ../../build/trayectories/trayectories.egg-info/requires.txt
+[1.710s] writing top-level names to ../../build/trayectories/trayectories.egg-info/top_level.txt
+[1.712s] reading manifest file '../../build/trayectories/trayectories.egg-info/SOURCES.txt'
+[1.713s] writing manifest file '../../build/trayectories/trayectories.egg-info/SOURCES.txt'
+[1.713s] running build
+[1.714s] running build_py
+[1.714s] copying trayectories/move_joints.py -> /home/alvaro/Desktop/workspace/ros_ur_driver/build/trayectories/build/lib/trayectories
+[1.714s] running install
+[1.715s] running install_lib
+[1.716s] copying /home/alvaro/Desktop/workspace/ros_ur_driver/build/trayectories/build/lib/trayectories/move_joints.py -> /home/alvaro/Desktop/workspace/ros_ur_driver/install/trayectories/lib/python3.10/site-packages/trayectories
+[1.716s] byte-compiling /home/alvaro/Desktop/workspace/ros_ur_driver/install/trayectories/lib/python3.10/site-packages/trayectories/move_joints.py to move_joints.cpython-310.pyc
+[1.718s] running install_data
+[1.718s] running install_egg_info
+[1.721s] removing '/home/alvaro/Desktop/workspace/ros_ur_driver/install/trayectories/lib/python3.10/site-packages/trayectories-0.0.0-py3.10.egg-info' (and everything under it)
+[1.721s] Copying ../../build/trayectories/trayectories.egg-info to /home/alvaro/Desktop/workspace/ros_ur_driver/install/trayectories/lib/python3.10/site-packages/trayectories-0.0.0-py3.10.egg-info
+[1.722s] running install_scripts
+[1.746s] Installing move_joints script to /home/alvaro/Desktop/workspace/ros_ur_driver/install/trayectories/lib/trayectories
+[1.746s] Installing move_l script to /home/alvaro/Desktop/workspace/ros_ur_driver/install/trayectories/lib/trayectories
+[1.746s] writing list of installed files to '/home/alvaro/Desktop/workspace/ros_ur_driver/build/trayectories/install.log'
+[1.792s] Invoked command in '/home/alvaro/Desktop/workspace/ros_ur_driver/src/trayectories' returned '0': PYTHONPATH=/home/alvaro/Desktop/workspace/ros_ur_driver/build/trayectories/prefix_override:/home/alvaro/Desktop/workspace/ros_ur_driver/install/trayectories/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/trayectories build --build-base /home/alvaro/Desktop/workspace/ros_ur_driver/build/trayectories/build install --record /home/alvaro/Desktop/workspace/ros_ur_driver/build/trayectories/install.log --single-version-externally-managed install_data
