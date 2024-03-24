@@ -24,3 +24,25 @@ El repositorio utiliza ROS2 Humble como versión de control. Para la comunicaci�
 - [ROS2 UR Driver](https://github.com/UniversalRobots/Universal_Robots_ROS2_Driver): Controlador de Universal Robots para actuar como una interfaz entre el entorno de ROS2 de nuestro equipo y el robot UR al que nos deseemos conectar.
 
 ## Instalación del repositorio
+
+## Comandos de instalación unificados
+Si ya se tiene bien instalado y configurado el software de la sección anterior, se puede copiar y pegar el siguiente bloque de código en la terminal. 
+
+````bash
+source /opt/ros/humble/setup.bash
+git clone -b main https://github.com/Miguel-LA/TFM_MiguelLerinAlonso.git
+cd ./TFM_MiguelLerinAlonso/workspace/ros_ur_driver/src/
+vcs import src --skip-existing --input src/Universal_Robots_ROS2_Driver/Universal_Robots_ROS2_Driver-not-released.${ROS_DISTRO}.repos
+rosdep update
+rosdep install --ignore-src --from-paths src -y
+colcon build --cmake-args -DCMAKE_BUILD_TYPE=Release
+source install/setup.bash
+````
+
+Si durante la fase de compilación con `colcon build` ocurre algún tipo de error se debe actualizar el sistema operativo.
+
+````bash
+sudo apt update
+sudo apt upgrade
+````
+
