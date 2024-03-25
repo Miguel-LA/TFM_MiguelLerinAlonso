@@ -36,6 +36,13 @@ rosdep update
 rosdep install --ignore-src --from-paths src -y
 colcon build --cmake-args -DCMAKE_BUILD_TYPE=Release
 source install/setup.bash
+
+# Obtener la ruta completa del directorio actual
+REPO_DIR=$(pwd)
+
+# Agregar las instrucciones a .bashrc para cargar automáticamente al iniciar una terminal
+echo "source /opt/ros/humble/setup.bash" >> ~/.bashrc
+echo "source $REPO_DIR/install/setup.bash" >> ~/.bashrc
 ````
 
 Si durante la fase de compilación con `colcon build` ocurre algún tipo de error se debe actualizar el sistema operativo.
@@ -45,3 +52,6 @@ sudo apt update
 sudo apt upgrade
 ````
 
+> **IMPORTANTE**
+>
+>Para la solución de posibles problemas de instalación se recomienda visitar la [página de la wiki](TFM_MiguelLerinAlonso.wiki/Instalacion_repo.md) del repositorio.

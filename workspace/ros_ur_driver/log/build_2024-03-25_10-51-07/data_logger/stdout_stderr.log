@@ -1,0 +1,59 @@
+running egg_info
+creating ../../build/data_logger/data_logger.egg-info
+writing ../../build/data_logger/data_logger.egg-info/PKG-INFO
+writing dependency_links to ../../build/data_logger/data_logger.egg-info/dependency_links.txt
+writing entry points to ../../build/data_logger/data_logger.egg-info/entry_points.txt
+writing requirements to ../../build/data_logger/data_logger.egg-info/requires.txt
+writing top-level names to ../../build/data_logger/data_logger.egg-info/top_level.txt
+writing manifest file '../../build/data_logger/data_logger.egg-info/SOURCES.txt'
+reading manifest file '../../build/data_logger/data_logger.egg-info/SOURCES.txt'
+writing manifest file '../../build/data_logger/data_logger.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/alvaro/TFM_MiguelLerinAlonso/workspace/ros_ur_driver/build/data_logger/build
+creating /home/alvaro/TFM_MiguelLerinAlonso/workspace/ros_ur_driver/build/data_logger/build/lib
+creating /home/alvaro/TFM_MiguelLerinAlonso/workspace/ros_ur_driver/build/data_logger/build/lib/data_logger
+copying data_logger/data_reader.py -> /home/alvaro/TFM_MiguelLerinAlonso/workspace/ros_ur_driver/build/data_logger/build/lib/data_logger
+copying data_logger/analog_reader.py -> /home/alvaro/TFM_MiguelLerinAlonso/workspace/ros_ur_driver/build/data_logger/build/lib/data_logger
+copying data_logger/__init__.py -> /home/alvaro/TFM_MiguelLerinAlonso/workspace/ros_ur_driver/build/data_logger/build/lib/data_logger
+copying data_logger/multi_logger.py -> /home/alvaro/TFM_MiguelLerinAlonso/workspace/ros_ur_driver/build/data_logger/build/lib/data_logger
+copying data_logger/digital_reader.py -> /home/alvaro/TFM_MiguelLerinAlonso/workspace/ros_ur_driver/build/data_logger/build/lib/data_logger
+copying data_logger/joint_reader.py -> /home/alvaro/TFM_MiguelLerinAlonso/workspace/ros_ur_driver/build/data_logger/build/lib/data_logger
+copying data_logger/super_logger.py -> /home/alvaro/TFM_MiguelLerinAlonso/workspace/ros_ur_driver/build/data_logger/build/lib/data_logger
+copying data_logger/data_emitter.py -> /home/alvaro/TFM_MiguelLerinAlonso/workspace/ros_ur_driver/build/data_logger/build/lib/data_logger
+running install
+running install_lib
+creating /home/alvaro/TFM_MiguelLerinAlonso/workspace/ros_ur_driver/install/data_logger/lib/python3.10/site-packages/data_logger
+copying /home/alvaro/TFM_MiguelLerinAlonso/workspace/ros_ur_driver/build/data_logger/build/lib/data_logger/data_reader.py -> /home/alvaro/TFM_MiguelLerinAlonso/workspace/ros_ur_driver/install/data_logger/lib/python3.10/site-packages/data_logger
+copying /home/alvaro/TFM_MiguelLerinAlonso/workspace/ros_ur_driver/build/data_logger/build/lib/data_logger/analog_reader.py -> /home/alvaro/TFM_MiguelLerinAlonso/workspace/ros_ur_driver/install/data_logger/lib/python3.10/site-packages/data_logger
+copying /home/alvaro/TFM_MiguelLerinAlonso/workspace/ros_ur_driver/build/data_logger/build/lib/data_logger/__init__.py -> /home/alvaro/TFM_MiguelLerinAlonso/workspace/ros_ur_driver/install/data_logger/lib/python3.10/site-packages/data_logger
+copying /home/alvaro/TFM_MiguelLerinAlonso/workspace/ros_ur_driver/build/data_logger/build/lib/data_logger/multi_logger.py -> /home/alvaro/TFM_MiguelLerinAlonso/workspace/ros_ur_driver/install/data_logger/lib/python3.10/site-packages/data_logger
+copying /home/alvaro/TFM_MiguelLerinAlonso/workspace/ros_ur_driver/build/data_logger/build/lib/data_logger/digital_reader.py -> /home/alvaro/TFM_MiguelLerinAlonso/workspace/ros_ur_driver/install/data_logger/lib/python3.10/site-packages/data_logger
+copying /home/alvaro/TFM_MiguelLerinAlonso/workspace/ros_ur_driver/build/data_logger/build/lib/data_logger/joint_reader.py -> /home/alvaro/TFM_MiguelLerinAlonso/workspace/ros_ur_driver/install/data_logger/lib/python3.10/site-packages/data_logger
+copying /home/alvaro/TFM_MiguelLerinAlonso/workspace/ros_ur_driver/build/data_logger/build/lib/data_logger/super_logger.py -> /home/alvaro/TFM_MiguelLerinAlonso/workspace/ros_ur_driver/install/data_logger/lib/python3.10/site-packages/data_logger
+copying /home/alvaro/TFM_MiguelLerinAlonso/workspace/ros_ur_driver/build/data_logger/build/lib/data_logger/data_emitter.py -> /home/alvaro/TFM_MiguelLerinAlonso/workspace/ros_ur_driver/install/data_logger/lib/python3.10/site-packages/data_logger
+byte-compiling /home/alvaro/TFM_MiguelLerinAlonso/workspace/ros_ur_driver/install/data_logger/lib/python3.10/site-packages/data_logger/data_reader.py to data_reader.cpython-310.pyc
+byte-compiling /home/alvaro/TFM_MiguelLerinAlonso/workspace/ros_ur_driver/install/data_logger/lib/python3.10/site-packages/data_logger/analog_reader.py to analog_reader.cpython-310.pyc
+byte-compiling /home/alvaro/TFM_MiguelLerinAlonso/workspace/ros_ur_driver/install/data_logger/lib/python3.10/site-packages/data_logger/__init__.py to __init__.cpython-310.pyc
+byte-compiling /home/alvaro/TFM_MiguelLerinAlonso/workspace/ros_ur_driver/install/data_logger/lib/python3.10/site-packages/data_logger/multi_logger.py to multi_logger.cpython-310.pyc
+byte-compiling /home/alvaro/TFM_MiguelLerinAlonso/workspace/ros_ur_driver/install/data_logger/lib/python3.10/site-packages/data_logger/digital_reader.py to digital_reader.cpython-310.pyc
+byte-compiling /home/alvaro/TFM_MiguelLerinAlonso/workspace/ros_ur_driver/install/data_logger/lib/python3.10/site-packages/data_logger/joint_reader.py to joint_reader.cpython-310.pyc
+byte-compiling /home/alvaro/TFM_MiguelLerinAlonso/workspace/ros_ur_driver/install/data_logger/lib/python3.10/site-packages/data_logger/super_logger.py to super_logger.cpython-310.pyc
+byte-compiling /home/alvaro/TFM_MiguelLerinAlonso/workspace/ros_ur_driver/install/data_logger/lib/python3.10/site-packages/data_logger/data_emitter.py to data_emitter.cpython-310.pyc
+running install_data
+creating /home/alvaro/TFM_MiguelLerinAlonso/workspace/ros_ur_driver/install/data_logger/share/ament_index
+creating /home/alvaro/TFM_MiguelLerinAlonso/workspace/ros_ur_driver/install/data_logger/share/ament_index/resource_index
+creating /home/alvaro/TFM_MiguelLerinAlonso/workspace/ros_ur_driver/install/data_logger/share/ament_index/resource_index/packages
+copying resource/data_logger -> /home/alvaro/TFM_MiguelLerinAlonso/workspace/ros_ur_driver/install/data_logger/share/ament_index/resource_index/packages
+copying package.xml -> /home/alvaro/TFM_MiguelLerinAlonso/workspace/ros_ur_driver/install/data_logger/share/data_logger
+running install_egg_info
+Copying ../../build/data_logger/data_logger.egg-info to /home/alvaro/TFM_MiguelLerinAlonso/workspace/ros_ur_driver/install/data_logger/lib/python3.10/site-packages/data_logger-0.0.0-py3.10.egg-info
+running install_scripts
+Installing analog_reader script to /home/alvaro/TFM_MiguelLerinAlonso/workspace/ros_ur_driver/install/data_logger/lib/data_logger
+Installing data_emitter script to /home/alvaro/TFM_MiguelLerinAlonso/workspace/ros_ur_driver/install/data_logger/lib/data_logger
+Installing data_reader script to /home/alvaro/TFM_MiguelLerinAlonso/workspace/ros_ur_driver/install/data_logger/lib/data_logger
+Installing digital_reader script to /home/alvaro/TFM_MiguelLerinAlonso/workspace/ros_ur_driver/install/data_logger/lib/data_logger
+Installing joint_reader script to /home/alvaro/TFM_MiguelLerinAlonso/workspace/ros_ur_driver/install/data_logger/lib/data_logger
+Installing multi_logger script to /home/alvaro/TFM_MiguelLerinAlonso/workspace/ros_ur_driver/install/data_logger/lib/data_logger
+Installing super_logger script to /home/alvaro/TFM_MiguelLerinAlonso/workspace/ros_ur_driver/install/data_logger/lib/data_logger
+writing list of installed files to '/home/alvaro/TFM_MiguelLerinAlonso/workspace/ros_ur_driver/build/data_logger/install.log'
