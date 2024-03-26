@@ -13,7 +13,6 @@ El repositorio se divide en las siguientes secciones, representadas cada una por
 
     1.1. **ros_ur_driver:** Este directorio guarda el espacio de trabajo propio del robot UR10 utilizado en este TFM.
 
-2. **wiki:** Esta carpeta alberga los ficheros de documentación del proyecto. Se guardan los mismos archivos que en la wiki pero se ponen en copia local por si en algún momento se debe dejar el acceso al repo como privado.
 
 # Descarga e instalación del repositorio
 ## Software previo
