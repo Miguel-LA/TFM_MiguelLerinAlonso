@@ -54,4 +54,4 @@ sudo apt upgrade
 
 > **IMPORTANTE**
 >
->Para la solución de posibles problemas de instalación se recomienda visitar la [página de la wiki](./TFM_MiguelLerinAlonso.wiki/Instalacion_repo.md) del repositorio.
+>Para la solución de posibles problemas de instalación se recomienda visitar la [página de la wiki](https://github.com/Miguel-LA/TFM_MiguelLerinAlonso/wiki/Instalacion_repo) del repositorio.
