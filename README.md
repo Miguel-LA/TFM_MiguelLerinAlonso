@@ -13,7 +13,7 @@ El repositorio se divide en las siguientes secciones, representadas cada una por
 
     1.1. **ros_ur_driver:** Este directorio guarda el espacio de trabajo propio del robot UR10 utilizado en este TFM.
 
-2. **TFM_MiguelLerinAlonso.wikigit:** Esta carpeta alberga los ficheros de documentación del proyecto. Se guardan los mismos archivos que en la wiki pero se ponen en copia local por si en algún momento se debe dejar el acceso al repo como privado.
+2. **wiki:** Esta carpeta alberga los ficheros de documentación del proyecto. Se guardan los mismos archivos que en la wiki pero se ponen en copia local por si en algún momento se debe dejar el acceso al repo como privado.
 
 # Descarga e instalación del repositorio
 ## Software previo
@@ -54,4 +54,4 @@ sudo apt upgrade
 
 > **IMPORTANTE**
 >
->Para la solución de posibles problemas de instalación se recomienda visitar la [página de la wiki](TFM_MiguelLerinAlonso.wiki/Instalacion_repo.md) del repositorio.
+>Para la solución de posibles problemas de instalación se recomienda visitar la [página de la wiki](./TFM_MiguelLerinAlonso.wiki/Instalacion_repo.md) del repositorio.
