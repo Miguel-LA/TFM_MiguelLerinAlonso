@@ -36,6 +36,9 @@ import numpy as np
 import re
 import time
 from tqdm import tqdm
+import os
+import datetime
+import git
 
 class SuperLogger(Node):
 
@@ -45,7 +48,7 @@ class SuperLogger(Node):
 
         # Se declaran los parámetros con su valor por defecto.
         self.declare_parameter('n_muestras', 50)
-        self.declare_parameter('ruta_guardado', '~/Desktop/datos_super_logger_ingenia.csv')
+        self.declare_parameter('ruta_guardado', '~/Desktop/datos_super_logger.csv')
         self.declare_parameter('continuar', True)
         self.declare_parameter('io', 'output')
 
@@ -183,6 +186,7 @@ class SuperLogger(Node):
 
             # Se guarda el csv
             self.mi_tabla.to_csv(self.ruta_guardado)
+            self.guardar_results_CSV()
 
             self.barra_progreso.close()
 
@@ -271,7 +275,7 @@ class SuperLogger(Node):
         patron=r'(True|False)'
         self.read_pinD_state_aux=re.search(patron, str(resultado)).group() # Se invoca al método group para que se guarde sólo el valor solicitado.
         
-
+    ## Formateo de la marca de tiempo si es necesario
     def formato_timestamp(self, timestamp_):
 
         # Se separa la marca de tiempo en la parte entera y la parte decimal.
@@ -285,6 +289,32 @@ class SuperLogger(Node):
         formato_tiempo=time.strftime('%H:%M:%S', time_struct) + ':' + f".{10*timestamp_frac:.5f}"[1:]
 
         return formato_tiempo
+    
+    ## Guardado de los resultados en la carpeta results del paquete.
+    def guardar_results_CSV(self):
+
+        # Se formatea el título para que incluya la fecha y hora correspondientes. Son las de creación de la gráfica.
+        fecha_hora_actual=datetime.datetime.now()
+
+        # Se guarda la imagen indicando la fecha de actualizacion.
+        fecha_str=fecha_hora_actual.strftime("%Y%m%d_%H%M")
+        titulo_tabla=f"{fecha_str}_datos_super_logger.csv"
+
+        # Obtener la ruta al directorio actual
+        current_dir = os.path.abspath(os.path.dirname(__file__))
+
+        # Obtener la ruta al directorio del repositorio Git
+        git_repo_dir = git.Repo(current_dir, search_parent_directories=True).git.rev_parse("--show-toplevel")
+        
+        ruta_guardado= git_repo_dir + '/workspace/ros_ur_driver/src/data_logger/results/'
+
+
+        
+        ruta_guardado=os.path.join(ruta_guardado, titulo_tabla)
+
+        self.mi_tabla.to_csv(ruta_guardado)
+
+        
 
 
 

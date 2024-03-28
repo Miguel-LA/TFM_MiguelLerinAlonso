@@ -1,9 +1,9 @@
 # Ignorar las carpetas build, install y log dentro de la carpeta workspace --> Las que salen del colcon build
-/workspace/build/
-/workspace/install/
-/workspace/log/
+/workspace/ros_ur_driver/build/
+/workspace/ros_ur_driver/install/
+/workspace/ros_ur_driver/log/
 
 # Ignorar todas las subcarpetas dentro de las carpetas build, install y log
-/workspace/build/**
-/workspace/install/**
-/workspace/log/**
+/workspace/ros_ur_driver/build/**
+/workspace/ros_ur_driver/install/**
+/workspace/ros_ur_driver/log/**

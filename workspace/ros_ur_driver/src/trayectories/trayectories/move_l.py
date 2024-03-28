@@ -37,6 +37,9 @@ import time
 from tqdm import tqdm
 import math 
 import csv
+import os
+import datetime
+import git
 
 # Esta clase es la respondable de calcular la trayectoria cartesiana.
 class CartesianPathNode(Node):
@@ -106,7 +109,7 @@ class TrayectoryNodeL(Node):
 
 
         trayectoria=self.get_parameter('trayectoria_dato').value
-        file_path= '/home/alvaro/Desktop/workspace/ros_ur_driver/src/trayectories/data/' + trayectoria
+        file_path= self.get_data_path() + trayectoria
         self.positions= self.read_positions_from_file(file_path)
 
         print('Iniciando trayectoria ...\n')
@@ -141,6 +144,18 @@ class TrayectoryNodeL(Node):
                 positions.append([float(value) for value in row])
 
             return positions
+        
+    def get_data_path(self):
+
+        # Obtener la ruta al directorio actual
+        current_dir = os.path.abspath(os.path.dirname(__file__))
+
+        # Obtener la ruta al directorio del repositorio Git
+        git_repo_dir = git.Repo(current_dir, search_parent_directories=True).git.rev_parse("--show-toplevel")
+        
+        data_path= git_repo_dir + '/workspace/ros_ur_driver/src/trayectories/data/'
+
+        return data_path
         
 
 def main(args=None):
