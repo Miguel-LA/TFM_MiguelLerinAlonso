@@ -16,6 +16,7 @@ import rclpy
 from rclpy.node import Node
 from std_msgs.msg import String     # Para manejar datos de ros 2 en formato String
 from std_msgs.msg import Float64    # Ídem para datos tipo float de 64 bits.
+from std_msgs.msg import Bool
 from sensor_msgs.msg._joint_state import JointState  # Para leer el estado de las articulaciones del UR.
 from ur_msgs.msg._io_states import IOStates # Para leer entradas y salidas digitales del UR.
 from moveit_msgs.srv import GetPositionIK # Para leer los mensajes de moveit.
@@ -56,7 +57,7 @@ class CartesianPathNode(Node):
         request.avoid_collisions= True
 
         while not self.compute_cartesian_path_client.wait_for_service(timeout_sec=1.0):
-            self.get_logger().info('Servico no disponible, esperado ...')
+            self.get_logger().info('Servicio no disponible, esperado ...')
         
         future= self.compute_cartesian_path_client.call_async(request)
 
@@ -102,6 +103,11 @@ class TrayectoryNodeL(Node):
         super().__init__('trayectory_node_cartesian')
 
         self.declare_parameter('trayectoria_dato', 'points_hel.csv')
+        self.declare_parameter('arrancar_logger', False)
+        self.arranca_logger=self.get_parameter('arrancar_logger').value
+
+        self.publisher_ = self.create_publisher(Bool, '/arranca_logger_topic', 10)
+        self.timer_ = self.create_timer(1.0, self.publish_arranca_logger)
         
 
         self.cartesian_path_node= CartesianPathNode()
@@ -128,13 +134,16 @@ class TrayectoryNodeL(Node):
         trajectory_solution= self.cartesian_path_node.compute_cartesian_path(self.goal_names)
 
         if trajectory_solution:
-            print('Se ah calculado la trayectoria con éxito, ejecutando ...')
+            print('Se ha calculado la trayectoria con éxito, ejecutando ...')
             self.action_client_node.execute_trajectory(trajectory_solution)
         else:
             print('Fallo en el cálculo de trayectoria')
 
         
         print('\n--- FIN DE TRAYECTORIA ---\n')
+        # self.arranca_logger=True
+        self.publish_arranca_logger()
+
 
     def read_positions_from_file(self, file_path):
         positions=[]
@@ -156,6 +165,14 @@ class TrayectoryNodeL(Node):
         data_path= git_repo_dir + '/workspace/ros_ur_driver/src/trayectories/data/'
 
         return data_path
+    
+    def publish_arranca_logger(self):
+        msg=Bool()
+        msg.data=True
+        self.publisher_.publish(msg)
+        print('Se publica las señal de arrancar logger')
+    
+    
         
 
 def main(args=None):

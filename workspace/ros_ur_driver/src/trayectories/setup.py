@@ -22,6 +22,7 @@ setup(
         'console_scripts': [
             "move_joints = trayectories.move_joints:main",
             "move_l = trayectories.move_l:main",
+            "node_launcher = trayectories.node_launcher:main",
         ],
     },
 )
