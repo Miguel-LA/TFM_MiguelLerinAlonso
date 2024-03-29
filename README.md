@@ -2,7 +2,7 @@
 
 En este repositorio se guarda todo el software desarrollando para poder realizar una instalación rápida del sistema.
 
-> **IMPORTANTE**
+> [!IMPORTANT]
 >
 >En este archivo README tan sólo se van a describir aspectos como la composición del repositorio o la guía básica de descarga e instalación. Para leer la documentación especializada de cada paquete, se recomienda leer su respectivo artículo en la [wiki](https://github.com/Miguel-LA/TFM_MiguelLerinAlonso/wiki) disponible en la página de Github.
 
@@ -51,6 +51,6 @@ sudo apt update
 sudo apt upgrade
 ````
 
-> **IMPORTANTE**
+>[!IMPORTANT]
 >
 >Para la solución de posibles problemas de instalación se recomienda visitar la [página de la wiki](https://github.com/Miguel-LA/TFM_MiguelLerinAlonso/wiki/Instalacion_repo) del repositorio.
