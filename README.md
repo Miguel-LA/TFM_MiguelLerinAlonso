@@ -51,6 +51,6 @@ sudo apt update
 sudo apt upgrade
 ````
 
->[!IMPORTANT]
+>[!NOTE]
 >
 >Para la solución de posibles problemas de instalación se recomienda visitar la [página de la wiki](https://github.com/Miguel-LA/TFM_MiguelLerinAlonso/wiki/Instalacion_repo) del repositorio.
