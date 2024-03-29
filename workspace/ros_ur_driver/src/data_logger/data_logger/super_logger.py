@@ -39,6 +39,7 @@ from tqdm import tqdm
 import os
 import datetime
 import git
+import sys
 
 class SuperLogger(Node):
 
@@ -189,6 +190,11 @@ class SuperLogger(Node):
             self.guardar_results_CSV()
 
             self.barra_progreso.close()
+
+            # Para salir del nodo cuando se habilita continuar==False.
+            if self.continuar_==False:
+                sys.exit(0)
+
 
         self.i+=1
 

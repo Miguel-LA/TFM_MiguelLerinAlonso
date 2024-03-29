@@ -1,6 +1,6 @@
 from setuptools import find_packages, setup
 
-package_name = 'trayectories'
+package_name = 'rutine_launcher'
 
 setup(
     name=package_name,
@@ -20,9 +20,7 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            "move_joints = trayectories.move_joints:main",
-            "move_l = trayectories.move_l:main",
-            # "node_launcher = trayectories.node_launcher:main",
+            "super_logger_launcher = rutine_launcher.super_logger_launcher:main",
         ],
     },
 )
