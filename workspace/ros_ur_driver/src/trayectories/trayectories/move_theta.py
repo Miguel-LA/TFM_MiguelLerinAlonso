@@ -56,10 +56,6 @@ class CartesianPathNode(Node):
         request.max_step= 0.5
         request.avoid_collisions= True
 
-        sourceFile= open('/home/alvaro/Desktop/demo_request.txt', 'w')
-        print(request.start_state, file=sourceFile)
-        sourceFile.close()
-
         while not self.compute_cartesian_path_client.wait_for_service(timeout_sec=1.0):
             self.get_logger().info('Servicio no disponible, esperado ...')
         
@@ -72,11 +68,17 @@ class CartesianPathNode(Node):
 
         if future.result() is not None:
             trajectory= future.result().solution
-            # print(future.result().fraction)
+            print(future.result().fraction)
             return trajectory
         else:
             self.get_logger().info('Se ha fallado calculando la solución en IK.')
             return None
+        
+    def transform_joint_to_xyz_positions(self, goal_names):
+        
+        
+
+        return None
 
 # Clase responsable de comunicar las acciones de seguimiento y ejecución de trayectorias.
 class MyActionClientNode(Node):
@@ -91,7 +93,6 @@ class MyActionClientNode(Node):
             return
         
         goal_msg=ExecuteTrajectory.Goal()
-        # print(trajectory_solution)
         goal_msg.trajectory=trajectory_solution
 
         future=self.execute_client.send_goal_async(goal=goal_msg)
@@ -103,11 +104,11 @@ class MyActionClientNode(Node):
    
 
 # Clase principal responsable de instanciar a las dos primeras y leer los datos del csv.
-class TrayectoryNodeL(Node):
+class TrayectoryNodeTheta(Node):
     def __init__(self):
-        super().__init__('trayectory_node_cartesian')
+        super().__init__('trayectory_node_theta')
 
-        self.declare_parameter('trayectoria_dato', 'points_hel.csv')
+        self.declare_parameter('trayectoria_dato', 'muelle_cilindrico_poses.csv')
         self.declare_parameter('arrancar_logger', False)
         self.arranca_logger=self.get_parameter('arrancar_logger').value
 
@@ -122,10 +123,17 @@ class TrayectoryNodeL(Node):
         trayectoria=self.get_parameter('trayectoria_dato').value
         file_path= self.get_data_path() + trayectoria
         self.positions= self.read_positions_from_file(file_path)
+       
 
         print('Iniciando trayectoria ...\n')
 
         self.goal_names=[]
+        self.calculo_trayectoria()
+
+    def calculo_trayectoria(self):
+
+        
+        self.positions= self.cartesian_path_node.transform_joint_to_xyz_positions(self.positions)
 
         for position in self.positions:
             poses=Pose()
@@ -143,7 +151,7 @@ class TrayectoryNodeL(Node):
 
         
         print('\n--- FIN DE TRAYECTORIA ---\n')
-        self.arranca_logger=True
+        # self.arranca_logger=True
         self.publish_arranca_logger()
 
 
@@ -180,7 +188,7 @@ class TrayectoryNodeL(Node):
 def main(args=None):
     rclpy.init(args=args)
 
-    node=TrayectoryNodeL()
+    node=TrayectoryNodeTheta()
 
     node.destroy_node()
     rclpy.shutdown()

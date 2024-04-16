@@ -29,7 +29,7 @@ class NodeLauncher(Node):
 
         # Se definen las instrucciones que entenderá nuestro nodo por correr --> PONER DATOS DE RUTINA AQUÍ
         self.string_trayectoria= 'ros2 run trayectories move_l'
-        self.string_super_logger= 'ros2 run data_logger super_logger --ros-args -p n_muestras:=100 -p continuar:=False'
+        self.string_super_logger= 'ros2 run data_logger super_logger --ros-args -p n_muestras:=2200  0 -p continuar:=False -p freq:=100'
 
         # Se arrancan los nodos partícipes
         self.start_nodes()  
@@ -64,7 +64,7 @@ class NodeLauncher(Node):
             self.logger_process.terminate()
         if self.mover_process:
             self.mover_process.terminate()
-        self.get_logger().info('NLos nodos han parado.')
+        self.get_logger().info('Los nodos han parado.')
 
 
 # Función main del nodo
