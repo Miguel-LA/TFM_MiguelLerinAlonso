@@ -91,7 +91,7 @@ class MyActionClientNode(Node):
             return
         
         goal_msg=ExecuteTrajectory.Goal()
-        # print(trajectory_solution)
+        print(trajectory_solution)
         goal_msg.trajectory=trajectory_solution
 
         future=self.execute_client.send_goal_async(goal=goal_msg)
@@ -134,7 +134,7 @@ class TrayectoryNodeL(Node):
             self.goal_names.append(poses)
 
         trajectory_solution= self.cartesian_path_node.compute_cartesian_path(self.goal_names)
-        # print(trajectory_solution)
+
         if trajectory_solution:
             print('Se ha calculado la trayectoria con éxito, ejecutando ...')
             self.action_client_node.execute_trajectory(trajectory_solution)

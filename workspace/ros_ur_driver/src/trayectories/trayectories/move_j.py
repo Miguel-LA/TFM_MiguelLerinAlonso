@@ -174,7 +174,7 @@ class TrajectoryNodeJ(Node):
         try:
             super().__init__('trayectory_node_joints')
 
-            self.declare_parameter('trayectoria_dato', 'move_wrist_2.csv')
+            self.declare_parameter('trayectoria_dato', 'tray_hel_joints.csv')
             self.declare_parameter('arrancar_logger', False)
             self.arranca_logger=self.get_parameter('arrancar_logger').value
 
