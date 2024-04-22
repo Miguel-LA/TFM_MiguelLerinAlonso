@@ -21,9 +21,12 @@ setup(
     entry_points={
         'console_scripts': [
             "move_joints = trayectories.move_joints:main",
+            "move_j = trayectories.move_j:main",
+            "move_j_action = trayectories.move_j_action:main",
             "move_l = trayectories.move_l:main",
             "move_theta = trayectories.move_theta:main",
             "xyz2joints = trayectories.xyz2joints:main",
+            "move_l_new = trayectories.move_l_new:main",
             # "node_launcher = trayectories.node_launcher:main",
         ],
     },

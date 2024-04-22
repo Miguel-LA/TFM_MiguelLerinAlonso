@@ -56,9 +56,9 @@ class CartesianPathNode(Node):
         request.max_step= 0.5
         request.avoid_collisions= True
 
-        sourceFile= open('/home/alvaro/Desktop/demo_request.txt', 'w')
-        print(request.start_state, file=sourceFile)
-        sourceFile.close()
+        # sourceFile= open('/home/alvaro/Desktop/demo_request.txt', 'w')
+        # print(request.start_state, file=sourceFile)
+        # sourceFile.close()
 
         while not self.compute_cartesian_path_client.wait_for_service(timeout_sec=1.0):
             self.get_logger().info('Servicio no disponible, esperado ...')
@@ -72,7 +72,7 @@ class CartesianPathNode(Node):
 
         if future.result() is not None:
             trajectory= future.result().solution
-            # print(future.result().fraction)
+            # print(future.result().solution)
             return trajectory
         else:
             self.get_logger().info('Se ha fallado calculando la solución en IK.')
@@ -134,7 +134,7 @@ class TrayectoryNodeL(Node):
             self.goal_names.append(poses)
 
         trajectory_solution= self.cartesian_path_node.compute_cartesian_path(self.goal_names)
-
+        # print(trajectory_solution)
         if trajectory_solution:
             print('Se ha calculado la trayectoria con éxito, ejecutando ...')
             self.action_client_node.execute_trajectory(trajectory_solution)

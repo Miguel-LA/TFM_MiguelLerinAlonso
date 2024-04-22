@@ -13,6 +13,7 @@
 
 import rclpy
 import math
+import rclpy.duration
 from rclpy.node import Node
 from geometry_msgs.msg import Quaternion
 from geometry_msgs.msg import PoseStamped
@@ -22,6 +23,9 @@ from std_msgs.msg import Bool
 from trajectory_msgs.msg import JointTrajectory, JointTrajectoryPoint
 from builtin_interfaces.msg import Duration
 from sensor_msgs.msg import JointState
+from rclpy.action import ActionClient # Cliente  para efecturar acciones de ros2.
+from moveit_msgs.action import ExecuteTrajectory # Acción de ejecución de trayectorias adaptada de moveit.
+from control_msgs.action import FollowJointTrajectory
 
 import time
 import csv
@@ -31,88 +35,54 @@ import git
 # import Event
 
 
-# # Clase que hace transformación de coordenadas cartesianas a articulares.
-# class IKTransformNode(Node):
-#     def __init__(self):
-#         super().__init__('ik_transform_node')
-#         self.ik_client = self.create_client(GetPositionIK, '/compute_ik')
-#         self.last_state = RobotState()
-
-#         self.last_state_joints=None
-#         self.suscriptor_joint_state= self.create_subscription(JointState,
-#                                 '/joint_states', 
-#                                 self.data_reader_callback, 
-#                                 10)
-        
-#         self.suscriptor_joint_state
-
-#         print('fakin spin 1')
-#         rclpy.spin_once(self)
-#         print('fakin spin')
-#         # self.create_subscription(RobotStateRTMsg,
-#         #                          '=',self.temperaturas_motor,
-#         #                          10)
-
-#     # Método de callback para tomar datos.
-#     def data_reader_callback(self, msg):
-        
-#         self.last_state_joints= msg
-
-    
-       
-#     def transform_xyz_to_joint_positions(self, goal_names):
-#         print('Estoy en transform xyz')
-#         request = GetPositionIK.Request()
-#         request.ik_request.group_name = "ur_manipulator"
-#         print('7777')
-
-#         # print(self.last_state_joints)
-#         # while self.last_state_joints==None:
-#         #     print(self.last_state)
-#         #     # Eve.wait(1)
-
-#         request.ik_request.robot_state.joint_state= self.last_state_joints
-#         request.ik_request.pose_stamped = goal_names
-#         request.ik_request.avoid_collisions = True
-#         # print(request)
-#         future = self.ik_client.call_async(request)
-#         print('Antes del spint')
-#         rclpy.spin_once(self)
-#         # rclpy.spin_until_future_complete(self, future=future, timeout_sec=10.0)
-        
-#         # sourceFile= open('/home/alvaro/Desktop/demo_request_spin.txt', 'w')
-#         # print(future, file=sourceFile)
-#         # sourceFile.close()
-
-#         rclpy.spin_until_future_complete(self, future)
-#         # print(future.result)
-#         print('Despues del spin')
-
-#         if future.result() is not None:
-#             print('Me meto al future')
-#             joint_positions = future.result().solution.joint_state.position
-#             print('1')
-#             self.last_state = future.result().solution
-#             print('2')
-#             return joint_positions
-#         else:
-#             print("Failed to calculate IK solution")
-#             return None
 
 
-# Clase que publica la trayectoria calculada en coordenadas articulares.
-class publisher_joint_trajectory_controller(Node):
+
+# Clase responsable de comunicar las acciones de seguimiento y ejecución de trayectorias mediante un mecanismo de acción cliente
+class MyActionClientNode(Node):
 
     def __init__(self):
-        super().__init__('joint_trajectory_publisher')
-        self.publisher_ = self.create_publisher(
-            JointTrajectory, '/joint_trajectory_controller/joint_trajectory', 10)
+        super().__init__('action_client_node')
+        self.execute_client= ActionClient(self, ExecuteTrajectory, '/execute_trajectory')
+        # self.publisher_ = self.create_publisher(
+        #     JointTrajectory, '/joint_trajectory_controller/joint_trajectory', 10)
         self.cuenta = 0
         # Asegurarse que las variables de tiempo siempre sean enteras
         self.tiempo_sec = 6
         self.tiempo_nanosec = 0
         self.last_sec = 0
         self.last_nanosec = 0
+
+    def execute_trajectory(self, joint_values):
+        if not self.execute_client.wait_for_server(timeout_sec=5.0):
+            self.get_logger().info('No está disponible el servidor de la acción /execute_trajectory')
+            return
+        goal_msg=ExecuteTrajectory.Goal()
+        point=JointTrajectoryPoint()
+        
+        goal_msg.trajectory.joint_trajectory.joint_names= ["shoulder_pan_joint", "shoulder_lift_joint", "elbow_joint",
+                           "wrist_1_joint", "wrist_2_joint", "wrist_3_joint"] 
+        goal_msg.trajectory.joint_trajectory.header.stamp= self.get_clock().now().to_msg()  
+        goal_msg.trajectory.joint_trajectory.header.frame_id= 'base_link'   
+        for position in joint_values:
+            point=JointTrajectoryPoint()
+            point.positions=position
+            # point.time_from_start= Duration(sec=1)
+            # self.AjustarTiempo()
+            # point.time_from_start = Duration(
+            #     sec=self.tiempo_sec + self.last_sec, nanosec=self.tiempo_nanosec + self.last_nanosec)
+            point.time_from_start = Duration(sec=1+self.cuenta, nanosec=0)
+            self.cuenta +=1
+            goal_msg.trajectory.joint_trajectory.points.append(point)
+            
+
+        print(goal_msg)
+        future=self.execute_client.send_goal_async(goal=goal_msg)
+
+        self.get_logger().info('Esperando resultado de la ejecución')
+
+        rclpy.spin_until_future_complete(self, future)
+        result=future.result()
 
     def AjustarTiempo(self, punto1, punto2):
         # Definir Velocidad de impresión
@@ -136,14 +106,11 @@ class publisher_joint_trajectory_controller(Node):
         msg = JointTrajectory()
         msg.joint_names = ["shoulder_pan_joint", "shoulder_lift_joint", "elbow_joint",
                            "wrist_1_joint", "wrist_2_joint", "wrist_3_joint"]  # Lista de nombres de las articulaciones
-        
 
         for i in range(len(all_coord_articulares)):
             point = JointTrajectoryPoint()
             # point.velocities = [0.08, 0.08, 0.08, 0.08, 0.08, 0.08]
             point.positions = all_coord_articulares[i]
-            point.velocities= [0.08, 0.08, 0.08, 0.08, 0.08, 0.08]
-            point.accelerations= [0.01, 0.01, 0.01, 0.01, 0.01, 0.01]
 
             if i != 0:
                 self.last_sec += self.tiempo_sec
@@ -162,8 +129,6 @@ class publisher_joint_trajectory_controller(Node):
                 sec=self.tiempo_sec + self.last_sec, nanosec=self.tiempo_nanosec + self.last_nanosec)
             msg.points.append(point)
 
-            
-        # print(msg)
         self.publisher_.publish(msg)
         # self.get_logger().info('Publicando: %s' % msg)
 
@@ -174,7 +139,7 @@ class TrajectoryNodeJ(Node):
         try:
             super().__init__('trayectory_node_joints')
 
-            self.declare_parameter('trayectoria_dato', 'move_wrist_2.csv')
+            self.declare_parameter('trayectoria_dato', 'tray_hel_joints.csv')
             self.declare_parameter('arrancar_logger', False)
             self.arranca_logger=self.get_parameter('arrancar_logger').value
 
@@ -183,7 +148,7 @@ class TrajectoryNodeJ(Node):
 
 
             # self.ik_node = IKTransformNode()
-            self.joint_trajectory_publisher = publisher_joint_trajectory_controller()
+            self.action_client_node = MyActionClientNode()
             self.aux_node = rclpy.create_node("aux_node")
 
             trayectoria=self.get_parameter('trayectoria_dato').value
@@ -204,16 +169,6 @@ class TrajectoryNodeJ(Node):
     def calcular_trayectoria(self):
         for position in self.positions_generator:
 
-            # goal_names = PoseStamped()
-            # goal_names.header.frame_id = "base_link"
-            # goal_names.header.stamp = self.aux_node.get_clock().now().to_msg()
-            # goal_names.pose.position.x, goal_names.pose.position.y, goal_names.pose.position.z = position
-
-            # goal_names.pose.orientation.w = 1.0
-
-            # print('Antes de la transformación')
-            # joint_position = self.ik_node.transform_xyz_to_joint_positions(goal_names)
-            # print('se ha hecho la transformación')
             joint_position=position
 
             if len(joint_position) == 6:
@@ -221,8 +176,9 @@ class TrajectoryNodeJ(Node):
                 self.all_joint_positions.append(joint_position)
 
         # print(self.all_joint_positions)
-        self.joint_trajectory_publisher.publish_trajectory(self.all_joint_positions)
-        
+        print('Voy a ejecutar el action client node')
+        self.action_client_node.execute_trajectory(self.all_joint_positions)
+
         print("\n ---  TRAYECTORIA EJECUTANDOSE CON ÉXITO   ---\n")
         
 
