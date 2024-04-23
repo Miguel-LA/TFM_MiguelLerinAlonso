@@ -29,6 +29,7 @@ from rclpy.node import Node
 from std_msgs.msg import String     # Para manejar datos de ros 2 en formato String
 from std_msgs.msg import Float64    # Ídem para datos tipo float de 64 bits.
 from sensor_msgs.msg._joint_state import JointState  # Para leer el estado de las articulaciones del UR.
+from geometry_msgs.msg import PoseStamped, Pose, PoseArray
 from ur_msgs.msg._io_states import IOStates # Para leer entradas y salidas digitales del UR.
 import pandas as pd     # Para manejar datos y crear tablas.
 import matplotlib.pyplot as plt # Para hacer gráficos con los datos registrados.
@@ -83,6 +84,25 @@ class SuperLogger(Node):
         self.joint_eff_aux=[]   # Esfuerzos articulares
         self.timestamps_aux=[]  # Vector para guardar las marcas de tiempo.
 
+        # Atributos del espacio cartesiano
+        self.x=[]
+        self.y=[]
+        self.z=[]
+
+        self.qx=[]
+        self.qy=[]
+        self.qz=[]
+        self.qw=[]
+
+        self.x_cart_=[]
+        self.y=[]
+        self.z=[]
+
+        self.qx=[]
+        self.qy=[]
+        self.qz=[]
+        self.qw=[]
+
 
         self.timestamps=[]  # Vector para guardar las marcas de tiempo.
         self.timestamps_aux=[]  # Vector auxiliar para guardar las marcas de tiempo.
@@ -132,9 +152,15 @@ class SuperLogger(Node):
                                                      '/io_and_status_controller/io_states', 
                                                      self.digital_input_reader, 10)
             
+        # se hace el suscriptor para posiciones articulares
+        self.subscription_carthesian= self.create_subscription(PoseStamped,
+                                                             '/pose_topic', 
+                                                             self.carthesian_position_reader, 10)
+            
         self.subscription_analog
         self.subscription_digital
         self.suscription_joints
+        self.subscription_carthesian
 
     def timmer_callback(self):
         # self.get_logger().info('Muestra super logger Nº: %d'%self.i)
@@ -162,6 +188,20 @@ class SuperLogger(Node):
         x_eff=self.joint_eff_aux
         self.joint_eff.append(x_eff)
 
+        # REgistro de coordenadas cartesianas
+        x_cart= self.x
+        self.x_cart_.append(x_cart)
+        y_cart= self.y
+        z_cart= self.z
+
+        qx_cart= self.qx
+        qy_cart= self.qy
+        qz_cart= self.qz
+        qw_cart= self.qw
+
+        print(x_cart)
+
+
 
         # Registro de marcas de tiempo.
         x_timestamp=self.timestamps_aux
@@ -180,6 +220,7 @@ class SuperLogger(Node):
                                     'q_eff':self.joint_eff,
                                     'AO_state:': self.read_pinA_state,
                                     'DO_state:': self.read_pinD_state,
+                                    'x_carthesian': self.x_cart_
                                     })
                        
             # Se eliminan las filas con datos basura.
@@ -223,6 +264,19 @@ class SuperLogger(Node):
         # Se guarda la marca de tiempo de cada medida (sincornizada con el reloj del ordenador)
         self.timestamps_aux= time.time()
         # self.timestamps_aux= self.formato_timestamp(self.timestamps_aux) # Esta línea formatea las marcas de tiempo para HH:mm:ss:decimasSegundo. Si se desea que no ocurra comentar esta línea.
+
+    # Método callback para leer la posición y orientación cartesiana
+    def carthesian_position_reader(self, msg):
+        self.x= msg.pose.position.x
+        self.y= msg.pose.position.y
+        self.z= msg.pose.position.z
+
+        self.qx = msg.pose.orientation.x
+        self.qy = msg.pose.orientation.y
+        self.qz = msg.pose.orientation.z
+        self.qw = msg.pose.orientation.w
+
+        # print(f"Posición: [{x}, {y}, {z}] - Orientación: [{qx}, {qy}, {qz}, {qw}]")
 
     # Método de callback para tomar datos de las salidas analógicas.
     def analog_output_reader(self, msg):
@@ -280,6 +334,8 @@ class SuperLogger(Node):
         # Para guardar resultado del pin
         patron=r'(True|False)'
         self.read_pinD_state_aux=re.search(patron, str(resultado)).group() # Se invoca al método group para que se guarde sólo el valor solicitado.
+
+
         
     ## Formateo de la marca de tiempo si es necesario
     def formato_timestamp(self, timestamp_):
