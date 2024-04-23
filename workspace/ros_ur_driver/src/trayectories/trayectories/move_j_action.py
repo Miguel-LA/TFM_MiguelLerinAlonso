@@ -39,7 +39,7 @@ import git
 class JointPathNode_bruto(Node):
     def __init__(self):
         super().__init__('joint_path_node')
-#         self.compute_fk_client= self.create_client(GetPositionFK, '/compute_fk')
+        self.compute_fk_client= self.create_client(FollowJointTrajectory, '/compute_fk')
 
         self.cuenta = 0
         # Asegurarse que las variables de tiempo siempre sean enteras
@@ -128,9 +128,14 @@ class JointPathNode_computeFK(Node):
 
         
         print('Estoy en compute FK joint trajectory')
-        trajectory= JointTrajectory()
-        trajectory.joint_names= ["shoulder_pan_joint", "shoulder_lift_joint", "elbow_joint",
+        # trajectory= JointTrajectory()
+        # trajectory.joint_names= ["shoulder_pan_joint", "shoulder_lift_joint", "elbow_joint",
+        # "wrist_1_joint", "wrist_2_joint", "wrist_3_joint"] 
+
+        trajectory= RobotTrajectory()
+        trajectory.joint_trajectory.joint_names= ["shoulder_pan_joint", "shoulder_lift_joint", "elbow_joint",
         "wrist_1_joint", "wrist_2_joint", "wrist_3_joint"] 
+        trajectory.joint_trajectory.header.stamp=  self.get_clock().now().to_msg()
 
         last_position = None
         last_time = 0
@@ -141,13 +146,11 @@ class JointPathNode_computeFK(Node):
             while not self.compute_fk_client.wait_for_service(timeout_sec=1.0):
                 self.get_logger().info('Servicio no disponible, esperado ...')
 
-                
-
             # request= GetPositionFK.Request() # Me sale un error diciendo que no lo puedo instanciar.
             request = GetPositionFK.Request()
             request.header.stamp= self.get_clock().now().to_msg()
             request.fk_link_names = ["wrist_3_link"]  # Cambia a tu eslabón final deseado
-            request.robot_state.joint_state.name = trajectory.joint_names
+            request.robot_state.joint_state.name = trajectory.joint_trajectory.joint_names
             request.robot_state.joint_state.position = position
 
             # request= RobotState()
@@ -167,8 +170,8 @@ class JointPathNode_computeFK(Node):
            
                 point.time_from_start = Duration(sec=last_time, nanosec=0)
         
-                point.velocities = [0.0] * len(trajectory.joint_names)  # Define tus velocidades
-                point.accelerations = [0.0] * len(trajectory.joint_names)  # Define tus aceleraciones
+                point.velocities = [0.0] * len(trajectory.joint_trajectory.joint_names)  # Define tus velocidades
+                point.accelerations = [0.0] * len(trajectory.joint_trajectory.joint_names)  # Define tus aceleraciones
                 if last_position is not None and last_time is not None:
                     duration = 1    #  20240423 Me quedo aquí. REvisar.
                     velocities = [(p2 - p1) / duration for p1, p2 in zip(last_position, position)]
@@ -179,14 +182,15 @@ class JointPathNode_computeFK(Node):
                     point.accelerations = [0.08, 0.08, 0.08, 0.08, 0.08, 0.08]
                     # point.velocities = [0.1, 0.1, 0.1, 0.1, 0.1, 0.1]
 
-                trajectory.points.append(point)
+                trajectory.joint_trajectory.points.append(point)
 
                 last_position = position
                 last_time += 1
                 # last_velocity = velocities
 
         print('SE ha generado una trayectoria con computefk')
-        
+        # Se devuelve una trayectoria definida como <class 'trajectory_msgs.msg._joint_trajectory.JointTrajectory'>
+        # Necesito devolver una tryectoria definida como <class 'moveit_msgs.msg._robot_trajectory.RobotTrajectory'>
         return trajectory
         # print(trajectory.points)
         # print('Voy a entrar en execute_trajectory')
@@ -209,16 +213,12 @@ class MyActionClientNode(Node):
             self.get_logger().info('No se pudo conectar al servidor.')
             return
         
-        print('Estoy en execute trjectory')
         trajectory_=RobotTrajectory()
-        trajectory_.joint_trajectory=trajectory
-
+        trajectory_.joint_trajectory=trajectory.joint_trajectory
         goal_msg= ExecuteTrajectory.Goal()
         goal_msg.trajectory= trajectory_
-        # print(goal_msg.trajectory)
         future= self.execute_client.send_goal_async(goal=goal_msg)
-        print('Estoy despues del future')
-
+        print(f'Tipo de future en move_j_action {type(future)}')
         self.get_logger().info('Ejecutando trayectoria articular de move_j_action')
         rclpy.spin_until_future_complete(self, future)
         result=future.result()
@@ -289,12 +289,14 @@ class TrajectoryNodeJ(Node):
                 joint_position=position
 
                 if len(joint_position) == 6:
-                    # print(f"Esto es joint_position: {joint_position}")
                     self.all_joint_positions.append(joint_position)
 
-            # print(self.all_joint_positions)
             trajectory_solution= self.joint_path_node.compute_joint_path(self.all_joint_positions)
-            # print(trajectory_solution)
+            print(f"tipo de trajectory_solution en move_J_action: {type(trajectory_solution)}")
+
+            # Hay que pasarle un mensaje de tipo <class 'moveit_msgs.msg._robot_trajectory.RobotTrajectory'>
+            # Ahora es tipo <class 'trajectory_msgs.msg._joint_trajectory.JointTrajectory'>
+            # Después de las correcciones ahora sí que es <class 'moveit_msgs.msg._robot_trajectory.RobotTrajectory'>
             self.action_client_node.execute_trajectory(trajectory_solution)
             print('Voy a ejecutar el action client node')
             # self.action_client_node.execute_trajectory(self.all_joint_positions)

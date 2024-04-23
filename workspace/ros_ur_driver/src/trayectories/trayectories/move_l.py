@@ -91,11 +91,11 @@ class MyActionClientNode(Node):
             return
         
         goal_msg=ExecuteTrajectory.Goal()
-        print(trajectory_solution)
+        # print(trajectory_solution)
         goal_msg.trajectory=trajectory_solution
 
         future=self.execute_client.send_goal_async(goal=goal_msg)
-
+        print(f'Tipo de future en move_l {type(future)}')
         self.get_logger().info('Esperando resultado de la ejecución')
 
         rclpy.spin_until_future_complete(self, future)
@@ -134,6 +134,7 @@ class TrayectoryNodeL(Node):
             self.goal_names.append(poses)
 
         trajectory_solution= self.cartesian_path_node.compute_cartesian_path(self.goal_names)
+        print(f"Tipo de trajectory_Solution en move_l {type(trajectory_solution)}")
 
         if trajectory_solution:
             print('Se ha calculado la trayectoria con éxito, ejecutando ...')
