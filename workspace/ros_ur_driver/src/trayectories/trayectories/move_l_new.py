@@ -55,6 +55,7 @@ class CartesianPathNode(Node):
         request.waypoints= waypoints
         request.max_step= 0.5
         request.avoid_collisions= True
+        # request.max_cartesian_speed= 0.5
 
         while not self.compute_cartesian_path_client.wait_for_service(timeout_sec=1.0):
             self.get_logger().info('Servicio no disponible, esperado ...')
@@ -67,8 +68,33 @@ class CartesianPathNode(Node):
         print('Servicio completado')
 
         if future.result() is not None:
-            trajectory= future.result().solution
-            print(future.result().fraction)
+            
+            ###################################### PARTE NUEVA BORRAR/COMENTAR SI NECESARIO ##################
+            destino= future.result().solution
+            factor_escala= 0.01
+
+            for j in range(len(future.result().solution.joint_trajectory.points)):
+                x_= future.result().solution.joint_trajectory.points[j]
+
+                for i in range(len(x_.velocities)):
+                    x_.velocities[i]*= factor_escala
+                    x_.accelerations[i]*= factor_escala
+
+                print(f"velocidades: {x_.velocities}")
+                print(f"aeleraciones: {x_.velocities}")
+
+                destino.joint_trajectory.points[j]= x_
+
+                print(j)
+            ##################################################################################################
+            
+            print(destino)
+            print(f"Factor escala: {factor_escala}")
+
+
+            # trajectory= future.result().solution
+            trajectory= destino
+            # print(future.result().fraction)
             return trajectory
         else:
             self.get_logger().info('Se ha fallado calculando la solución en IK.')
@@ -104,7 +130,7 @@ class TrayectoryNodeL(Node):
     def __init__(self):
         super().__init__('trayectory_node_cartesian')
 
-        self.declare_parameter('trayectoria_dato', '20240418_muelleSensual_SAFE_posesROS.csv')
+        self.declare_parameter('trayectoria_dato', '20240424_interpJunta0_cartesianspace_quat.csv')
         self.declare_parameter('arrancar_logger', False)
         self.arranca_logger=self.get_parameter('arrancar_logger').value
 
