@@ -11,7 +11,7 @@ class SerialReaderNode(Node):
         self.serial_port = serial.Serial('/dev/ttyACM0', 9600)  # Ajusta el puerto serie según tu configuración
         self.timer = self.create_timer(0.1, self.read_serial)
         self.enviar_consigna=0
-        self.T_consigna= 77
+        self.T_consigna= 10
 
         # En el valor de T_consigna es preferible declarar lo que queires como un valor numérico y si hay un problema en el fondo va a entender un string
         if isinstance(self.T_consigna, str) and self.i==0:
