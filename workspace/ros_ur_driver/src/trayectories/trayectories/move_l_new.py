@@ -48,12 +48,12 @@ class CartesianPathNode(Node):
         super().__init__('cartesian_path_node')
         self.compute_cartesian_path_client= self.create_client(GetCartesianPath, '/compute_cartesian_path')
 
-    def compute_cartesian_path(self, waypoints):
+    def compute_cartesian_path(self, waypoints, factor_escala):
         request= GetCartesianPath.Request()
         request.header.stamp= self.get_clock().now().to_msg()
         request.group_name= 'ur_manipulator'
         request.waypoints= waypoints
-        request.max_step= 0.5
+        request.max_step= 0.05
         request.avoid_collisions= True
         # request.max_cartesian_speed= 0.5
 
@@ -71,7 +71,6 @@ class CartesianPathNode(Node):
             
             ###################################### PARTE NUEVA BORRAR/COMENTAR SI NECESARIO ##################
             destino= future.result().solution
-            factor_escala= 0.01
 
             for j in range(len(future.result().solution.joint_trajectory.points)):
                 x_= future.result().solution.joint_trajectory.points[j]
@@ -80,22 +79,50 @@ class CartesianPathNode(Node):
                     x_.velocities[i]*= factor_escala
                     x_.accelerations[i]*= factor_escala
 
-                print(f"velocidades: {x_.velocities}")
-                print(f"aeleraciones: {x_.velocities}")
+                print(x_.time_from_start)
+
+                aux_nanosec= x_.time_from_start.nanosec
+                aux_sec= x_.time_from_start.sec
+                aux_duration= aux_sec*1e9+aux_nanosec
+                aux_duration/=factor_escala
+
+                segundos= aux_duration//1e9
+                nanosegundos= aux_duration%1e9
+                print(f'Tiempo con el factor de escala. Segundos {segundos} --- Nanosegundos {nanosegundos}')
+
+                x_.time_from_start.sec= int(segundos)
+                x_.time_from_start.nanosec= int(nanosegundos)
+
+
+
+                # print(f"velocidades: {x_.velocities}")
+                # print(f"aeleraciones: {x_.velocities}")
 
                 destino.joint_trajectory.points[j]= x_
 
-                print(j)
+                # print(j)
             ##################################################################################################
             
-            print(destino)
-            print(f"Factor escala: {factor_escala}")
+            
 
-
-            # trajectory= future.result().solution
-            trajectory= destino
+            if factor_escala==1:
+                print('Se ejecuta la solucion de moveit')
+                print(f"Factor escala: {factor_escala}")
+                trajectory= future.result().solution
+            elif factor_escala<1:
+                print('Se ejecuta la solución del control de velocidad')
+                # print(destino)
+                print(f"Factor escala < 1 : {factor_escala}")
+                trajectory= destino
+            else:
+                print('Se ejecuta la solución del control de velocidad')
+                # print(destino)
+                print(f"Factor escala > 1 : {factor_escala}")
+                trajectory= destino
+            
             # print(future.result().fraction)
             return trajectory
+            # return None
         else:
             self.get_logger().info('Se ha fallado calculando la solución en IK.')
             return None
@@ -132,6 +159,7 @@ class TrayectoryNodeL(Node):
 
         self.declare_parameter('trayectoria_dato', '20240424_interpJunta0_cartesianspace_quat.csv')
         self.declare_parameter('arrancar_logger', False)
+        self.declare_parameter('factor_escala', 1.00)
         self.arranca_logger=self.get_parameter('arrancar_logger').value
 
         self.publisher_ = self.create_publisher(Bool, '/arranca_logger_topic', 10)
@@ -145,6 +173,8 @@ class TrayectoryNodeL(Node):
         trayectoria=self.get_parameter('trayectoria_dato').value
         file_path= self.get_data_path() + trayectoria
         self.positions= self.read_positions_from_file(file_path)
+
+        self.factor_escala=self.get_parameter('factor_escala').value
 
         print('Iniciando trayectoria ...\n')
 
@@ -165,7 +195,7 @@ class TrayectoryNodeL(Node):
             # print('Se asignan las poses en la nueva lectura del csv')
             self.goal_names.append(poses)
 
-        trajectory_solution= self.cartesian_path_node.compute_cartesian_path(self.goal_names)
+        trajectory_solution= self.cartesian_path_node.compute_cartesian_path(self.goal_names, self.factor_escala)
 
         if trajectory_solution:
             print('Se ha calculado la trayectoria con éxito, ejecutando ...')
