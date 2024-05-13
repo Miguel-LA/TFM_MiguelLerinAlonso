@@ -18,6 +18,7 @@ from geometry_msgs.msg import Quaternion
 from geometry_msgs.msg import PoseStamped
 from moveit_msgs.srv import GetPositionIK
 from moveit_msgs.msg import RobotState
+from std_msgs.msg import Bool
 from trajectory_msgs.msg import JointTrajectory, JointTrajectoryPoint
 from builtin_interfaces.msg import Duration
 from sensor_msgs.msg import JointState
@@ -27,7 +28,7 @@ import csv
 import os
 import datetime
 import git
-
+# import Event
 
 
 # Clase que hace transformación de coordenadas cartesianas a articulares.
@@ -37,19 +38,62 @@ class IKTransformNode(Node):
         self.ik_client = self.create_client(GetPositionIK, '/compute_ik')
         self.last_state = RobotState()
 
+        self.last_state_joints=None
+        self.suscriptor_joint_state= self.create_subscription(JointState,
+                                '/joint_states', 
+                                self.data_reader_callback, 
+                                10)
+        
+        self.suscriptor_joint_state
+
+        print('fakin spin 1')
+        rclpy.spin_once(self)
+        print('fakin spin')
+        # self.create_subscription(RobotStateRTMsg,
+        #                          '=',self.temperaturas_motor,
+        #                          10)
+
+    # Método de callback para tomar datos.
+    def data_reader_callback(self, msg):
+        
+        self.last_state_joints= msg
+
+    
+       
     def transform_xyz_to_joint_positions(self, goal_names):
+        print('Estoy en transform xyz')
         request = GetPositionIK.Request()
         request.ik_request.group_name = "ur_manipulator"
-        request.ik_request.robot_state = self.last_state
+        print('7777')
+
+        print(self.last_state_joints)
+        # while self.last_state_joints==None:
+        #     print(self.last_state)
+        #     # Eve.wait(1)
+
+        request.ik_request.robot_state.joint_state= self.last_state_joints
         request.ik_request.pose_stamped = goal_names
         request.ik_request.avoid_collisions = True
+        print(request)
         future = self.ik_client.call_async(request)
+        print('Antes del spint')
+        rclpy.spin_once(self)
+        # rclpy.spin_until_future_complete(self, future=future, timeout_sec=10.0)
+        
+        # sourceFile= open('/home/alvaro/Desktop/demo_request_spin.txt', 'w')
+        # print(future, file=sourceFile)
+        # sourceFile.close()
 
         rclpy.spin_until_future_complete(self, future)
+        print(future.result)
+        print('Despues del spin')
 
         if future.result() is not None:
+            print('Me meto al future')
             joint_positions = future.result().solution.joint_state.position
+            print('1')
             self.last_state = future.result().solution
+            print('2')
             return joint_positions
         else:
             print("Failed to calculate IK solution")
@@ -122,28 +166,35 @@ class publisher_joint_trajectory_controller(Node):
 # Clase principal responsable de instanciar a las dos primeras y leer los datos del csv.
 class TrajectoryNodeJ(Node):
     def __init__(self):
-        super().__init__('trayectory_node_joints')
+        try:
+            super().__init__('trayectory_node_joints')
 
-        self.declare_parameter('trayectoria_dato', 'points.csv')
+            self.declare_parameter('trayectoria_dato', 'points_hel.csv')
+            self.declare_parameter('arrancar_logger', False)
+            self.arranca_logger=self.get_parameter('arrancar_logger').value
+
+            self.publisher_ = self.create_publisher(Bool, '/arranca_logger_topic', 10)
+            self.timer_ = self.create_timer(1.0, self.publish_arranca_logger)
 
 
-        self.ik_node = IKTransformNode()
-        self.joint_trajectory_publisher = publisher_joint_trajectory_controller()
-        self.aux_node = rclpy.create_node("aux_node")
+            self.ik_node = IKTransformNode()
+            self.joint_trajectory_publisher = publisher_joint_trajectory_controller()
+            self.aux_node = rclpy.create_node("aux_node")
 
-        trayectoria=self.get_parameter('trayectoria_dato').value
-        file_path= self.get_data_path() + trayectoria
-        print(file_path)
-        self.positions_generator = self.read_positions_from_file(file_path)
-        # print(self.positions_generator)
+            trayectoria=self.get_parameter('trayectoria_dato').value
+            file_path= self.get_data_path() + trayectoria
+            self.positions_generator = self.read_positions_from_file(file_path)
+            # print(self.positions_generator)
 
-        print("Iniciando trayectoria...\n")
-        self.all_joint_positions = []
+            print("Iniciando trayectoria...\n")
+            self.all_joint_positions = []
 
-        self.calcular_trayectoria()
+            self.calcular_trayectoria()
+        except Exception as exception:
+            print('Except del try catch')
+            print(exception)
 
     def calcular_trayectoria(self):
-
         for position in self.positions_generator:
 
             goal_names = PoseStamped()
@@ -153,15 +204,22 @@ class TrajectoryNodeJ(Node):
 
             goal_names.pose.orientation.w = 1.0
 
+            print('Antes de la transformación')
             joint_position = self.ik_node.transform_xyz_to_joint_positions(goal_names)
+            print('se ha hecho la transformación')
 
             if len(joint_position) == 6:
                 self.all_joint_positions.append(joint_position)
 
+        # print(self.all_joint_positions)
         self.joint_trajectory_publisher.publish_trajectory(self.all_joint_positions)
 
         print("\n ---  TRAYECTORIA EJECUTANDOSE CON ÉXITO   ---\n")
-        self.joint_trajectory_publisher.destroy_node()
+
+        self.publisher_ = self.create_publisher(Bool, '/arranca_logger_topic', 10)
+        self.timer_ = self.create_timer(1.0, self.publish_arranca_logger)
+        self.publish_arranca_logger()
+        # self.joint_trajectory_publisher.destroy_node()
 
     def read_positions_from_file(self, file_path):
         positions=[]
@@ -184,6 +242,11 @@ class TrajectoryNodeJ(Node):
 
         return data_path
 
+    def publish_arranca_logger(self):
+        msg=Bool()
+        msg.data=True
+        self.publisher_.publish(msg)
+        print('Se publica las señal de arrancar logger')
 
 def main(args=None):
     rclpy.init(args=args)

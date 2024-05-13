@@ -61,6 +61,8 @@ class SuperLogger(Node):
 
         self.declare_parameter('freq', 1)
 
+        print('Estoy en super logger')
+
 
         # Atributos propios del nodo para trabajar. Se asocian los parámetros inicalizados.
         self.i=0    # Contador de muestras.
