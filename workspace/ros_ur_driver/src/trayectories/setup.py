@@ -22,7 +22,7 @@ setup(
         'console_scripts': [
             "move_joints = trayectories.move_joints:main",
             "move_l = trayectories.move_l:main",
-            "move_l_new = trayectories.move_l_new:main",
+            "move_l_original = trayectories.move_l_original:main",
             # "node_launcher = trayectories.node_launcher:main"kk,
         ],
     },
