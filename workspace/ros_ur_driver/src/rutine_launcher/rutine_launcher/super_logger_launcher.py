@@ -29,7 +29,7 @@ class NodeLauncher(Node):
 
         # Se definen las instrucciones que entenderá nuestro nodo por correr --> PONER DATOS DE RUTINA AQUÍ
         self.string_trayectoria= 'ros2 run trayectories move_l --ros-args -p factor_escala:=0.5 -p trayectoria_dato:=20240506_medio_estrella_posesROSquat_miguel.csv'
-        self.string_super_logger= 'ros2 run data_logger super_logger --ros-args -p n_muestras:=500 -p freq:=100'
+        self.string_super_logger= 'ros2 run data_logger super_logger --ros-args -p n_muestras:=50000 -p freq:=100'
 
         # Se arrancan los nodos partícipes
         self.start_nodes()  
