@@ -2,7 +2,23 @@ import rclpy
 from rclpy.node import Node
 from std_msgs.msg import String
 import serial
-import time 
+import time
+import syllapy
+
+class ArduinoCommunicator(Node):
+    def __init__(self):
+        super().__init__('arduino_communicator')
+        
+        self.serial_port = serial.Serial('/dev/ttyACM0', 9600)  # Ajusta el puerto serie según tu configuración
+
+        self.enviar_consigna=0
+        self.T_consigna= 77
+
+
+    def send_message_to_arduino(self, message):
+        self.serial_port.write(message.encode())
+        time.sleep(0.1)  # Espera para asegurar que el mensaje se envíe completamente
+
 
 class SerialReaderNode(Node):
     def __init__(self):
@@ -10,20 +26,9 @@ class SerialReaderNode(Node):
         self.publisher_ = self.create_publisher(String, 'serial_data', 10)
         self.serial_port = serial.Serial('/dev/ttyACM0', 9600)  # Ajusta el puerto serie según tu configuración
         self.timer = self.create_timer(0.1, self.read_serial)
-        self.enviar_consigna=0
-        self.T_consigna= 65
 
-        # En el valor de T_consigna es preferible declarar lo que queires como un valor numérico y si hay un problema en el fondo va a entender un string
-        if isinstance(self.T_consigna, str) and self.i==0:
-            print(f"No voy a meter esa borriqueria de {self.T_consigna}")
-            print('Le mando un OFF')
-            self.T_consigna= 50
-            self.enviar_consigna=1
-        else:
-            # print(f'T_consigna es un valor numérico: {self.T_consigna}')
-            self.enviar_consigna= 1
+        # En el valor de T_consigna es preferible declarar lo que queires como un 
 
-        self.send_message_to_arduino(f"{self.T_consigna}")
 
     def read_serial(self):
         if self.serial_port.in_waiting > 0:
@@ -75,14 +80,18 @@ class SerialReaderNode(Node):
         self.serial_port.write(message.encode())
         time.sleep(0.1)  # Espera para asegurar que el mensaje se envíe completamente
 
-
 def main(args=None):
     rclpy.init(args=args)
-    node = SerialReaderNode()
+    arduino_communicator = ArduinoCommunicator()
+    arduino_serial= SerialReaderNode()
 
-    rclpy.spin(node)
+    while rclpy.ok():
+        # Envía el mensaje "hola" al Arduino cada segundo
+        arduino_communicator.send_message_to_arduino(f"{arduino_communicator.T_consigna}\n")
+        arduino_serial.read_serial()
+        time.sleep(0.2)
 
-    node.destroy_node()
+    # arduino_node.serial_port.close()
     rclpy.shutdown()
 
 if __name__ == '__main__':

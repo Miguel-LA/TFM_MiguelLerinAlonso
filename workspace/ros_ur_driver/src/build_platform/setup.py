@@ -20,9 +20,11 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            "serial_reader = build_platform.serial_reader:main",
-            "arduino_communicator = build_platform.arduino_communicator:main",
+            # "serial_reader = build_platform.serial_reader:main",
+            # "arduino_communicator = build_platform.arduino_communicator:main",
             "serial_reader_v2 = build_platform.serial_reader_v2:main",
+            "arduino_communicator_v2 = build_platform.arduino_communicator_v2:main",
+            "messages = build_platform.messages:main",
         ],
     },
 )
