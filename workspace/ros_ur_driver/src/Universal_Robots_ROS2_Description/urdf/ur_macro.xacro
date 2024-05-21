@@ -288,6 +288,28 @@
     </link>
     <!-- |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| -->
 
+    <!-- |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| -->
+    <link name="cama_impresion">
+      <visual>
+        <origin xyz="0 0 0" rpy="${wrist_3_roll} ${wrist_3_pitch} ${wrist_3_yaw}"/>
+        <geometry>
+          <mesh filename="file://$(find ur_description)/meshes/ur10/visual/cama_impresion.stl" scale="0.001 0.001 0.001"/>
+        </geometry>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="${wrist_3_roll} ${wrist_3_pitch} ${wrist_3_yaw}"/>
+        <geometry>
+          <mesh filename="file://$(find ur_description)/meshes/ur10/collision/cama_impresion.stl" scale="0.001 0.001 0.001"/>
+        </geometry>
+      </collision>
+      <xacro:cylinder_inertial radius="${wrist_3_inertia_radius}" length="${wrist_3_inertia_length}"  mass="${wrist_3_mass}">
+        <origin xyz="0.0 0.0 ${-0.5 * wrist_3_inertia_length}" rpy="0 0 0" />
+      </xacro:cylinder_inertial>
+    </link>
+
+
+    <!-- |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| -->
+
     <!-- base_joint fixes base_link to the environment -->
     <joint name="${tf_prefix}base_joint" type="fixed">
       <xacro:insert_block name="origin" />
@@ -385,6 +407,13 @@
       <parent link="${tf_prefix}base_link" />
       <child link="mesa" />
       <origin xyz="0.76884 -0.27794 -0.16726" rpy="-0.0054 -0.0053 0.0116"/> 
+      <axis xyz="0 0 1" />
+    </joint>
+
+    <joint name="cama_impresion" type="fixed">
+      <parent link="${tf_prefix}wrist_3_link" />
+      <child link="cama_impresion" />
+      <origin xyz="0 0 0.25" rpy="0 ${-pi/2} ${-pi/2-0.1}" />
       <axis xyz="0 0 1" />
     </joint>
 

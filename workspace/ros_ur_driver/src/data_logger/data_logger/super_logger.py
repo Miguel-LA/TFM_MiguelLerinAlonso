@@ -16,7 +16,7 @@
 #  AL CSV DE SALIDA. Se indica el estado de ejecución del nodo al pasar el punto límite de muestras.
 #  * digital_output_pin: Número del pin de salida digital del UR que se quiere leer por defecto se encuentra inicializado al 4. 
 #  * digital_input_pin: Número del pin de entrada digital del UR que se quiere leer por defecto se encuentra inicializado al 4. 
-#   * analog_output_pin: Número del pin de salida analógico del UR que se quiere leer por defecto se encuentra inicializado al 0. 
+#  * analog_output_pin: Número del pin de salida analógico del UR que se quiere leer por defecto se encuentra inicializado al 0. 
 #  * analog_input_pin: Número del pin de entrada analógico del UR que se quiere leer por defecto se encuentra inicializado al 0. 
 #  * io: Para indicar si en la instacia del nodo se desea rastrear entradas o salidas. Por defecto se encuentra inicializado para una salida digital. Las palabras clave son input/output.
 #  * freq: Frecuencia de muestreo deseada en Hz. Por defecto se incia a 1 Hz.
