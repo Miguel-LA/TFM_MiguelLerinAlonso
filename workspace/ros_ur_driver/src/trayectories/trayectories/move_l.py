@@ -65,10 +65,13 @@ class CartesianPathNode(Node):
         request.max_step= 0.05
         request.avoid_collisions= True
 
+        print(f'Se mete como dato {len(waypoints)} waypoints a calcular')
+
         # Aviso de que el servicio puede tardar un poco en obtener un resultado final.
         while not self.compute_cartesian_path_client.wait_for_service(timeout_sec=1.0):
             self.get_logger().info('Servicio no disponible, esperado ...')
         
+
         # Solución de trayectoria calculada
         future= self.compute_cartesian_path_client.call_async(request)
 
@@ -76,13 +79,13 @@ class CartesianPathNode(Node):
         rclpy.spin_until_future_complete(self, future)
         # self.get_logger.info('Servicio completado')
         print('Servicio completado')
+        print(f'Future tiene un total de {len(future.result().solution.joint_trajectory.points)}')
 
         # Con una trayectoria previa calculada por el controlador, se define el control de velocidad mediante factor de escala.
         if future.result() is not None:
             
             # Copia de la trayectoria de moveit con la que se operará
             destino= future.result().solution
-
             # Modificación de velocidades y aceleraciones articulares de la trayectoria resultado.
             # ïdem para los tiempos relativo de ejecución. Se hace punto a punto para asegurar un buen resultado.
             for j in range(len(future.result().solution.joint_trajectory.points)):
@@ -118,6 +121,7 @@ class CartesianPathNode(Node):
 
                 if j==len(future.result().solution.joint_trajectory.points)-1:
                     print(f'Tiempo de ejecución aproximado: {segundos/60:.2f} minutos')
+                    print(f'Se calculan {len(future.result().solution.joint_trajectory.points)} puntos en la solución')
             
             
             # Depenediendo del factor de escala aplicado se pasa a ROS2 una solución a otra.
@@ -135,10 +139,68 @@ class CartesianPathNode(Node):
                 print(f"Factor escala > 1 : {factor_escala}")
                 trajectory= destino
             
+            # Se guarda la trayectoria calculada por moveit en un excel.
+            self.save_trajectory(trajectory=trajectory)
+
             return trajectory
         else:
             self.get_logger().info('Se ha fallado calculando la solución en IK.')
             return None
+        
+
+    def save_trajectory(slef, trajectory):
+        print('Se procede a guardar la trayectoria calculada en un csv')
+        joint_names = trajectory.joint_trajectory.joint_names
+        points = trajectory.joint_trajectory.points
+
+        data = {name: [] for name in joint_names}
+        data['time_from_start'] = []
+
+        for point in points:
+            for i, name in enumerate(joint_names):
+                data[name].append(point.positions[i])
+            time_in_sec = point.time_from_start.sec + point.time_from_start.nanosec * 1e-9
+            data['time_from_start'].append(time_in_sec)
+
+
+        # Se guarda la trayectoria resultado del cálculo de moveit en la carpeta data/saved_trajectories
+        # Se formatea el título para que incluya la fecha y hora correspondientes. Son las de creación de la gráfica.
+        fecha_hora_actual=datetime.datetime.now()
+
+        # Se guarda la imagen indicando la fecha de actualizacion.
+        fecha_str=fecha_hora_actual.strftime("%Y%m%d_%H%M")
+        titulo_tabla=f"{fecha_str}_trajectory.csv"
+
+        # Obtener la ruta al directorio actual
+        current_dir = os.path.abspath(os.path.dirname(__file__))
+
+        # Obtener la ruta al directorio del repositorio Git
+        git_repo_dir = git.Repo(current_dir, search_parent_directories=True).git.rev_parse("--show-toplevel")
+        
+        ruta_guardado= git_repo_dir + '/workspace/ros_ur_driver/src/trayectories/data/saved_trajectories/'
+
+
+        
+        ruta_guardado=os.path.join(ruta_guardado, titulo_tabla)
+
+        # self.mi_tabla.to_csv(ruta_guardado)
+
+
+        df = pd.DataFrame(data)
+        df.to_csv(ruta_guardado)
+        print(f'Trayectoria guardada en {ruta_guardado}')
+
+    def get_data_path(self):
+
+        # Obtener la ruta al directorio actual
+        current_dir = os.path.abspath(os.path.dirname(__file__))
+
+        # Obtener la ruta al directorio del repositorio Git
+        git_repo_dir = git.Repo(current_dir, search_parent_directories=True).git.rev_parse("--show-toplevel")
+        
+        data_path= git_repo_dir + '/workspace/ros_ur_driver/src/trayectories/data/'
+
+        return data_path
 
 # Clase responsable de comunicar las acciones de seguimiento y ejecución de trayectorias.
 class MyActionClientNode(Node):
@@ -214,6 +276,7 @@ class TrayectoryNodeL(Node):
             self.goal_names.append(poses)
 
         # Se solicita una trayectoria articular solución.
+        print(f'El tamaño del vector de entrada es {len(self.goal_names)}')
         trajectory_solution= self.cartesian_path_node.compute_cartesian_path(self.goal_names, self.factor_escala)
 
         # Cuando se tiene la trayectoria solución se manda ejecutar.
