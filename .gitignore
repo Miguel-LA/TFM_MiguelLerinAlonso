@@ -7,3 +7,8 @@
 /workspace/ros_ur_driver/build/**
 /workspace/ros_ur_driver/install/**
 /workspace/ros_ur_driver/log/**
+
+# Ignorar estos archivos en concreto
+workspace/ros_ur_driver/src/data_logger/results/20240523_1953_datos_super_logger.csv
+workspace/ros_ur_driver/src/data_logger/results/20240528_1947_datos_super_logger.csv
+workspace/ros_ur_driver/src/data_logger/results/20240528_1854_datos_super_logger.csv
