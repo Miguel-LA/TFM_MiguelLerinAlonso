@@ -1,0 +1,38 @@
+\chapter{Objetivos y estructura de la memoria} \label{cap: objetivos}
+\section{Objetivo del trabajo}
+El objetivo principal de este trabajo es la implementación de un sistema de control basado en ROS2 que permita preparar fácilmente una estación robotizada de fabricación aditiva.
+
+El trabajo puede dividirse en cuatro partes fundamentales:
+\begin{enumerate}
+    \item \textbf{Diseño de arquitectura de control:} Se definen los actores principales del flujo de trabajo de la estación \acrshort{NPAM} indicando el tipo de mensajes trabajados y las actuaciones de control que deben efectuarse.
+    \item \textbf{Sistema de toma de datos:} Elaborar un sistema de toma de datos genérico que permita conocer en todo momento las variables de control del robot de la estación.
+    \item \textbf{Ejecución automática de trayectorias:} Implementar un algoritmo de cálculo y generación de trayectorias a partir de los modelos \acrshort{CAD}.
+    \item \textbf{Calentamiento de la plataforma de impresión:} Desarrollar un controlador sencillo que permita calentar la plataforma de impresión y regular su temperatura para mantenerse fiel al valor consigna que le comande el computador central al comienzo de la etapa de preparación del proceso \acrshort{AM}.
+\end{enumerate}
+
+\section{Estructura de la memoria}
+La estructura del trabajo se compone de un total de 10 capítulos. Los primeros se plantean como una introducción al problema y a los conocimientos técnicos necesarios para la comprensión del proyecto y del resto de la memoria. Los siguientes cuatro capítulos tienen una carga más técnica y se han redactado con la intención de describir cada subobjetivo del trabajo de forma independiente. Esto es, cada uno cuenta con su propia introducción al problema, descripción de la metodología seguida y balance de resultados y conclusiones. Los últimos tres capítulos corresponden a las conclusiones finales del proyecto, la descripción de la planificación y presupuestos seguidos y un análisis del impacto del proyecto en diferentes dimensiones.
+
+Los siguientes puntos describen más detalladamente el contenido de cada capítulo de la memoria:
+
+\begin{itemize}
+    \item En el capítulo \ref{cap: introduccion}  se hace una definición sencilla de \acrshort{AM} mencionando sus orígenes y algunas de sus aplicaciones más novedosas. Del mismo modo, también se comentan los últimos avances del campo resaltando aquellos que sirven de especial interés para la motivación del presente proyecto. Después de hablar de la motivación del proyecto, el capítulo finaliza presentando el marco de trabajo físico, el entorno del laboratorio del grupo de \href{https://fabricacion.industriales.upm.es/}{Ingeniería de Fabricación} de la ETSII-UPM.
+
+    \item En el capítulo \ref{cap: objetivos} se definen el objetivo principal del proyecto y se indica la subdivisión que se ha hecho en objetivos más pequeños para favorecer su correcto seguimiento. También se describe la estructura de la memoria indicando el contenido de cada capítulo.
+
+    \item En el capítulo \ref{cap: fundamento_teorico} se presentan aquellos conocimientos necesarios para comprender el alcance del trabajo y su funcionamiento. Es decir, se presentará al robot utilizado, los conceptos esenciales de \acrshort{ROS}, el modelo cinemático empleado y las herramientas de software que han permitido el cálculo y ejecución de las trayectorias deseadas. También se presentarán otros equipos físicos de importancia para este proyecto como la cama de impresión \acrshort{NPAM} o el sensor de desplazamiento láser entre otros.
+
+    \item El capítulo \ref{cap: diseno_arquitectura} describe la arquitectura de control integrada dentro de la estación del presente proyecto. La metodología seguida se divide en dos partes: una primera que define aquellos requisitos técnicos esenciales que debe implementar el sistema, y una segunda en la que se describe el desarrollo obtenido. El capítulo finaliza presentando un caso de uso como ejemplo y además comenta las ventajas y posibles mejoras del modelo de arquitectura implementado.
+
+    \item El capítulo \ref{cap:lectura_datos} presenta el sistema de lectura de datos de ejecución del manipulador robótico de la estación y de los dispositivos que dependen de él como es el caso del sensor de distancia láser. Se comienza identificando las señales de mayor importancia y su naturaleza, posteriormente se describe el funcionamiento del sistema basado en ROS2 responsable de su muestreo. Finalmente, a modo de resultados se presentará al menos un caso de uso para cada variable de interés y se procederá a evaluar las ventajas y limitaciones del paquete desarrollado.
+
+    \item En el capítulo \ref{cap: trayectorias} se describe el proceso de desarrollo del sistema de cálculo y ejecución de trayectorias a partir de la matriz de puntos obtenida del proceso de slicing. Esto se hace definiendo tres objetivos de menor nivel referentes a la construcción de un entorno de planificación offline con capacidad de detección de colisiones con elementos reales, el desarrollo de un sistema de cálculo y ejecución de trayectorias robóticas no planares para el cobot; y un control de velocidad de ejecución de movimiento. El capítulo cierra presentando las validaciones realizadas para cada objetivo y comentando las ventajas y principales limitaciones del sistema y las herramientas empleadas.
+
+    \item El capítulo \ref{cap: control_temperatura} expone el desarrollo del sistema de control automática de temperatura de la plataforma de impresión. Se arranca definiendo un modelo propio de arquitectura de comunicaciones para este dispositivo en el que se favorezca la modularidad del conjunto de la estación. A continuación se procede a describir el modelo de control propuesto y se evalúa su desempeño en dos ensayos diferenciados. Finalmente se comenta las ventajas aportadas por la filosofía de diseño e implementación utilizadas y se resaltan las limitaciones del estado actual de dicho dispositivo.
+
+    \item En el capítulo \ref{cap:discusion_conclusiones} se realiza una revisión de todos los objetivos de mayor y menor nivel planteados en este trabajo para, a continuación valorear las ventajas y limitaciones observadas durante la ejecución del proyecto. Finalmente se discutirá la conveniencia de dichas soluciones extrayendo un conjunto de conclusiones generales e indicando posibles líneas futuras de trabajo.
+
+    \item El capítulo \ref{cap: planificacion_presupuesto}  es el referente a la planificación temporal del proyecto y el cálculo de su presupuesto de ejecución. Como sistemas de planificación se aborda un modelo de la planificación estratégica -que hace uso de herramientas como la \acrshort{EDP} y el diagrama Gantt- y un modelo de planificación ágil basado en la filosofía Kanban. 
+
+    \item El capítulo \ref{cap:evaluacion_impactos} abarca un análisis integral del proyecto en cuatro apartados clave. En primer lugar, se evalúa el impacto social del proyecto, considerando su influencia en la comunidad y los posibles beneficios o desafíos que pueda generar. En segundo lugar, se examina el impacto económico, analizando los costos, ahorros y efectos financieros que el proyecto podría implicar. En tercer lugar, se valora el impacto medioambiental se destacan aquellos aspectos positivos y negativos para el entorno natural. Finalmente, se realiza un comentario de la contribución del proyecto a los Objetivos de Desarrollo Sostenible (ODS), identificando los objetivos específicos a los que apoya y cómo puede contribuir a su cumplimiento.
+\end{itemize}

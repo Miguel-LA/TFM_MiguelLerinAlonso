@@ -1,0 +1,130 @@
+\newpage
+
+%%%%%% --- RESUMEN --- %%%%%
+\pdfbookmark[section]{Resumen}{Resumen}
+\chapter*{Resumen}  % Se añade un asterisco a \section para que el título no esté numerado.
+\markright{Resumen} % Al utilizar \section* se ha de añadir manualmente el título del apartado al encabezado.
+%\addcontentsline{toc}{chapter}{Resumen} % Al utilizar \section* se ha de añadir manualmente el apartado al índice (Table Of Contents, TOC).
+
+Dentro del paradigma de la Industria 4.0, en concreto el referente a los sistemas de fabricación, las estaciones flexibles cada vez cobran una mayor relevancia. El creciente uso de este tipo de estaciones se ve impulsado por las necesidades de un mercado cada vez más exigente, en el que se favorece el empleo de componentes personalizados y rápidamente escalables.
+
+La tecnología de fabricación aditiva supone una gran oportunidad por su capacidad para desarrollar multitud de diseños optimizando el material empleado y dotando al ingeniero responsable de una gran libertad en el diseño de sus piezas. Sin embargo, este tipo de tecnologías ve limitadas sus capacidades por dos aspectos cruciales para su evolución: la limitación de su volumen de trabajo y el bajo número de grados de libertad disponibles.
+
+La primera se asocia a la necesidad de trabajar con piezas de tamaño reducido, lo que obliga al usuario a pensar en diseños por partes que se integren con facilidad en una estructura mayor. La segunda es la referente al difícil acceso que puede existir a los recovecos de las figuras de mayor complejidad. 
+
+Como solución a estos problemas muchas empresas e investigadores han invertido grandes cantidades de dinero, tiempo y esfuerzo en el desarrollo de sistemas que integren un manipulador robótico de 6 grados de libertad. Es decir, se busca utilizar un elemento compacto de gran precisión y versatilidad en su espacio de movimiento.
+
+El uso de este tipo de robots implica superar dos grandes problemáticas asociadas como son la generación de trayectorias complejas y la implementación del equipo dentro de un marco de comunicaciones de mayor nivel, donde pueda ser un elemento más de una estación de fabricación flexible. Esto es, que tenga capacidad para recibir y enviar mensajes provenientes de otros elementos de la planta industrial -como la red de comunicaciones inalámbricas, el sistema de aporte de material o los sensores asociados- mientras realiza automáticamente los movimientos asociados al proceso de fabricación.
+
+En el presente proyecto, se propone e implementa un diseño de arquitectura de control automático para una estación de fabricación aditiva que integre este tipo de robot en un proceso que usa trayectorias de alta complejidad como la \acrfull{NPAM}. Este sistema se construye utilizando el entorno de software proporcionado por ROS2 para el cálculo de trayectorias no planares, que se han utilizado como marco de validación de la capacidad del sistema para el cálculo y trazado de trayectorias complejas.
+
+El proyecto se ha desarrollado dentro del marco de trabajo que proporciona el entorno del departamento de \hyperlink{https://fabricacion.industriales.upm.es/}{Ingeniería de Fabricación} de la ETSII-UPM. Es un esfuerzo multidisciplinar en el que se ha efectuado una labor de coordinación entre varios equipos especialistas en campos como la automatización de procesos, la electrónica de control, la programación de algoritmos de laminado, diseño de producto o de instalaciones industriales.
+
+El proyecto se ha desarrollado en cuatro pilares esenciales como son (1) el diseño de una arquitectura de control que satisfaga las necesidades de las diferentes disciplinas implicadas en la construcción de la estación, (2) el desarrollo de un sistema de lectura de datos provenientes del robot manipulador y los equipos conectados al mismo, (3) la definición y validación de un sistema de cálculo y ejecución de trayectorias a partir de modelos tridimensionales del entorno de trabajo y los productos deseados y (4) un sistema de calentamiento automático de uno de los elementos auxiliares al manipulador robótico como es la plataforma de impresión. Los cuatro pilares cuentan con un elemento común que sirve de nexo común para la comunicación, definición y ejecución de sus respectivas tareas: el entorno de programación robótica ROS2.
+
+Estos cuatro pilares tienen su propia entidad y se enlazan sucesivamente en el diseño, implementación y validación de la estación, constituyendo cada uno su propio capítulo en el que se define un universo propio conformado por el problema que le corresponde, la metodología que se propone como solución y los resultados que aporta.
+
+En líneas generales del proyecto, se dice que éste comienza con la definición del flujo de trabajo asociado al proceso aditivo no planar que se desea robotizar y la propuesta de arquitectura informática que puede implementarlo en la estación de fabricación. Posteriormente, se aborda la problemática de la obtención de información directa proveniente del manipulador robótico y el conjunto de sensores/actuadores conectados al mismo, con resultados positivos en cuanto a la integración rápida de una gran variedad de equipos y mensajes.
+
+La etapa de mayor relevancia del proyecto es la referente al sistema de ejecución automática de trayectorias no planares, en la que se define un modelo de programación basado en ROS2 que permite combinar aportes de la filosofía de planificación de trayectorias offline y online. Este enfoque se basa en la integración de la calibración automática del manipulador con un entorno de cálculo automático de trayectorias basado en restricciones de espacio de trabajo, tiempo y velocidad de ejecución. Los resultados observados abren la puerta al desarrollo de nuevos sistemas de este tipo aunque hacen especial hincapié en la necesidad de un sistema común de definición de trayectorias no planares como entrada al algoritmo de cálculo cinemático de la estación.
+
+De forma paralela se trabaja en la regulación automática de la temperatura alcanzada por la plataforma de impresión, que trabaja como un elemento relativamente independiente del robot industrial pero perteneciente a la estación de fabricación. Es decir, se pasa por definir un sistema de control dinámico de la temperatura de la plataforma que sea capaz de comunicar su estado al resto de la estación para que se gestionen adecuadamente el resto de operaciones definidas en el flujo de trabajo.
+
+Todas las tareas planteadas han acabado realizándose con éxito y como cierre al proyecto se hace un balance de los resultados aportados por todos los sistemas y flujos de trabajo con los que se ha trabajado. En él se evalúan las mayores limitaciones observadas durante el trabajo realizado -las cuales pueden restringir el correcto funcionamiento de la plataforma de impresión- y se comenta el valor aportado por las soluciones adoptadas. También se dedica una sección a posibles mejoras de cara a futuros proyectos.
+
+\textbf{Palabras clave:} Aprendizaje híbrido, aprendizaje offline, aprendizaje online, calibración extrínseca, calibración intrínseca, ecosistema ROS2, estación de fabricación, fabricación aditiva no planar, fabricación robotizada.
+
+\section*{Códigos UNESCO} 
+\begin{itemize}
+    \item[] 12 - Matemáticas
+        \begin{itemize}
+            \item[] 1201 - Álgebra
+            \item[] 1203 - Ciencias de la computación 
+            \item[] 1204 - Geometría 
+            \item[] 1206 - Análisis numérico
+            \item[] 1207 - Investigación operativa
+        \end{itemize}
+        
+    \item[] 22 - Física
+        \begin{itemize}
+            \item[] 2203 - Electrónica
+            \item[] 2205 - Mecánica 
+        \end{itemize}
+        
+    \item[] 33 - Ciencias tecnológicas
+        \begin{itemize}
+            \item[] 3304 - Tecnología de los ordenadores
+            \item[] 3307 - Tecnología electrónica
+            \item[] 3310 - Tecnología industrial
+            \item[] 3311 - Instrumentación tecnológica
+            \item[] 3313 - Tecnología e ingeniería mecánica
+            \item[] 3325 - Tecnología de las telecomunicaciones
+        \end{itemize}
+\end{itemize}
+
+%%%%%% --- ABSTRACT --- %%%%%
+\newpage
+\pdfbookmark[section]{Abstract}{Abstract}
+\chapter*{Abstract}  % Se añade un asterisco a \section para que el título no esté numerado.
+\markright{Abstract} % Al utilizar \section* se ha de añadir manualmente el título del apartado al encabezado.
+%\addcontentsline{toc}{chapter}{Abstract} % Al utilizar \section* se ha de añadir manualmente el apartado al índice (Table Of Contents, TOC).
+
+Within the paradigm of Industry 4.0, specifically regarding manufacturing systems, flexible stations are becoming increasingly significant. The growing use of such stations is driven by the needs of an ever-demanding market, which favors the use of personalized and rapidly scalable components.
+
+Additive manufacturing technology presents a great opportunity due to its ability to develop a multitude of designs while optimizing the material used, providing the responsible engineer with significant freedom in the design of their parts. However, this type of technology is limited by two crucial aspects for its evolution: the limitation of its work volume and the low number of available degrees of freedom.
+
+The first is associated with the need to work with small-sized parts, which forces the user to think in terms of designs that can be easily integrated into a larger structure. The second pertains to the difficult access that may exist to the recesses of more complex figures.
+
+As a solution to these problems, many companies and researchers have invested large amounts of money, time, and effort in developing systems that integrate a robotic manipulator with 6 degrees of freedom. That is, the aim is to use a compact element with high precision and great versatility in its movement space.
+
+The use of this type of robots involves overcoming two major associated problems: the generation of complex trajectories and the implementation of the equipment within a higher-level communication framework, where it can be an element of a flexible manufacturing station. That is, it must be able to receive and send messages from other elements of the industrial plant - such as the wireless communication network, the material supply system, or associated sensors - while automatically performing the movements associated with the manufacturing process.
+
+In the present project, an automatic control architecture design for an additive manufacturing station is proposed and implemented, integrating this type of robot in a process that uses high-complexity trajectories such as \acrfull{NPAM}. This system is built using the software environment provided by ROS2 for the calculation of non-planar trajectories, which have been used as a validation framework for the system's capability to calculate and trace complex trajectories.
+
+The project has been developed within the framework provided by the environment of the \hyperlink{https://fabricacion.industriales.upm.es/}{Manufacturing Engineering} department of ETSII-UPM. It is a multidisciplinary project in which coordination work has been carried out between several teams specializing in fields such as process automation, control electronics, programming slicing algorithms, product design, or industrial installations.
+
+The project has been developed on four essential pillars: (1) the design of a control architecture that meets the needs of the different disciplines involved in the construction of the station, (2) the development of a data reading system from the robotic manipulator and the connected equipment, (3) the definition and validation of a trajectory calculation and execution system based on three-dimensional models of the work environment and desired products, and (4) an automatic heating system for one of the auxiliary elements to the robotic manipulator, such as the printing platform. The four pillars share a common element that serves as a link for the communication, definition, and execution of their respective tasks: the ROS2 robotic programming environment.
+
+These four pillars have their own entity and are successively linked in the design, implementation, and validation of the station, each constituting its own chapter in which a universe is defined by the corresponding problem, the proposed methodology as a solution, and the results provided.
+
+In general terms of the project, it begins with the definition of the workflow associated with the non-planar additive process to be robotized and the proposal of the computing architecture that can implement it in the manufacturing station. Subsequently, the problem of obtaining direct information from the robotic manipulator and the set of connected sensors/actuators is addressed, with positive results in terms of the rapid integration of a wide variety of equipment and messages.
+
+The most relevant stage of the project is related to the automatic execution system of non-planar trajectories, in which a programming model based on ROS2 is defined, allowing the combination of contributions from the offline and online trajectory planning philosophy. This approach is based on the integration of automatic manipulator calibration with an automatic trajectory calculation environment based on workspace, time, and execution speed constraints. The observed results pave the way for the development of new systems of this type, although they especially emphasize the need for a common system for defining non-planar trajectories as input to the kinematic calculation algorithm of the station.
+
+In parallel, work is done on the automatic regulation of the temperature reached by the printing platform, which functions as a relatively independent element of the industrial robot but belongs to the manufacturing station. That is, a dynamic temperature control system for the platform is defined, capable of communicating its status to the rest of the station to manage the rest of the operations defined in the workflow appropriately.
+
+All the tasks proposed have been successfully completed, and as a project closure, a balance of the results provided by all the systems and workflows worked on is made. It evaluates the major limitations observed during the work performed - which may restrict the proper functioning of the printing platform - and comments on the value provided by the adopted solutions. A section is also dedicated to possible improvements for future projects.
+
+\textbf{Keywords:} Extrinsic calibration, hybrid learning, intrinsic calibration, manufacturing station, non-planar additive manufacturing, offline learning, online learning, robotic additive manufacturing, ROS2 enviroment
+
+
+\section*{UNESCO Codes} 
+\begin{itemize}
+    \item[] 12 - Mathematics
+        \begin{itemize}
+            \item[] 1201 - Algebra
+            \item[] 1203 - Computer Science
+            \item[] 1204 - Geometry
+            \item[] 1206 - Numerical Analysis
+            \item[] 1207 - Operations Research
+        \end{itemize}
+        
+    \item[] 22 - Physics
+        \begin{itemize}
+            \item[] 2203 - Electronics
+            \item[] 2205 - Mechanics
+        \end{itemize}
+        
+    \item[] 33 - Technological Sciences
+        \begin{itemize}
+            \item[] 3304 - Computer Technology
+            \item[] 3307 - Electronic Technology
+            \item[] 3310 - Industrial Technology
+            \item[] 3311 - Instrumentation Technology
+            \item[] 3313 - Mechanical Engineering and Technology
+            \item[] 3325 - Telecommunications Technology
+        \end{itemize}
+\end{itemize}
+
+
+% \afterpage{\blankpage} % Se añade una página en blanco después del resumen.

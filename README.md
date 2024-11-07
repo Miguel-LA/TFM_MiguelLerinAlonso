@@ -9,9 +9,11 @@ En este repositorio se guarda todo el software desarrollando para poder realizar
 # Composición del repositorio
 El repositorio se divide en las siguientes secciones, representadas cada una por su propia carpeta:
 
-1. **workspace:** Este directorio sirve epara establecer un espacio de trabajo ROS2 con los equipos róbotivos del Laboratorio de Ingeniería de Fabricación de la ETSII-UPM. Se ha diseñado para que se le puedan añadir otros sistemas en el futuro como el AGV MiR10 o el robot Kuka.
+1. **workspace:** Este directorio sirve para establecer un espacio de trabajo ROS2 con los equipos róbotivos del Laboratorio de Ingeniería de Fabricación de la ETSII-UPM. Se ha diseñado para que se le puedan añadir otros sistemas en el futuro como el AGV MiR10 o el robot Kuka.
 
     1.1. **ros_ur_driver:** Este directorio guarda el espacio de trabajo propio del robot UR10 utilizado en este TFM.
+2. **control_unit:** En este directorio se aloja el sistema y arquitectura de control de los elementos de disipación de calor automática. Se puede utilizar para otros componentes como extrusor o gripper del robot.
+3. **Memoria:** Memoria del trabajo en pdf y en código Latex.
 
 
 # Descarga e instalación del repositorio
